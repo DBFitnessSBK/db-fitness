@@ -44,9 +44,8 @@ export default function Footer() {
           <div className="db-footer-col">
             <h4>Rechtliches</h4>
             <ul>
-              <li><a href="#">Impressum</a></li>
-              <li><a href="#">Datenschutz</a></li>
-              <li><a href="#">AGB</a></li>
+              <li><a href="/impressum">Impressum</a></li>
+              <li><a href="/datenschutz">Datenschutz</a></li>
             </ul>
           </div>
         </div>
