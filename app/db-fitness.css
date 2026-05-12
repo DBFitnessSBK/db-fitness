@@ -1256,6 +1256,7 @@ a { color: inherit; text-decoration: none; }
   padding: 140px 0 120px;
   position: relative;
   background: var(--bg);
+  border-top: 1px solid var(--line);
 }
 .db-insta-head {
   display: grid;
@@ -1426,6 +1427,7 @@ a { color: inherit; text-decoration: none; }
   padding: 140px 0 80px;
   position: relative;
   background: var(--bg);
+  border-top: 1px solid var(--line);
 }
 .db-contact-grid {
   display: grid;
