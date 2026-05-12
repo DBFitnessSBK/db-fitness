@@ -68,7 +68,7 @@ const services = [
     ),
     title: 'Laufkurse',
     tag: 'Outdoor · Sonsbeck',
-    desc: 'Von 5K bis Marathon. Laufstil-Analyse, individueller Trainingsplan und gemeinsame Einheiten · meine eigene Leidenschaft, jetzt deine.',
+    desc: <>Von 5K bis Marathon. Laufstil-Analyse, individueller Trainingsplan und gemeinsame Einheiten · meine eigene <span style={{ color: '#FF5B1E' }}>Leidenschaft</span>, jetzt deine.</>,
     meta1: 'Outdoor', meta2: 'Anfänger – Pro',
   },
   {
