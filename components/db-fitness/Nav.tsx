@@ -12,7 +12,7 @@ export default function Nav() {
     window.addEventListener('scroll', updateNav, { passive: true })
     updateNav()
 
-    const sectionIds = ['top', 'about', 'services', 'kursplan', 'insta', 'contact']
+    const sectionIds = ['top', 'about', 'services', 'kursplan', 'reviews', 'insta', 'contact']
     const setActive = () => {
       const y = window.scrollY + window.innerHeight * 0.35
       let current = 'top'
@@ -51,6 +51,7 @@ export default function Nav() {
             { href: '#about', label: 'Daniel' },
             { href: '#services', label: 'Leistungen' },
             { href: '#kursplan', label: 'Kursplan' },
+            { href: '#reviews', label: 'Bewertungen' },
             { href: '#insta', label: 'Instagram' },
             { href: '#contact', label: 'Kontakt' },
           ].map(({ href, label }) => (
