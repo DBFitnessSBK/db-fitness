@@ -1372,6 +1372,12 @@ a { color: inherit; text-decoration: none; }
   max-width: 44ch;
   margin: 0 0 40px;
 }
+.db-contact-lede a {
+  color: var(--db-accent);
+  text-decoration: none;
+  transition: opacity .15s ease;
+}
+.db-contact-lede a:hover { opacity: .75; }
 .db-contact-info { display: grid; gap: 18px; }
 .db-contact-row {
   display: grid;
@@ -1392,8 +1398,16 @@ a { color: inherit; text-decoration: none; }
   color: var(--ink-mute);
 }
 .db-contact-row .value { color: var(--ink); font-weight: 500; }
-.db-contact-row .value a:hover { color: var(--db-accent); }
-.db-contact-row .value small { display: block; color: var(--ink-dim); font-size: 13px; margin-top: 4px; font-weight: 400; }
+.db-contact-row .value a {
+  display: block;
+  color: var(--ink);
+  text-decoration: none;
+  transition: color .15s ease;
+}
+.db-contact-row .value a:hover,
+.db-contact-row .value a:focus { color: var(--db-accent); }
+.db-contact-row .value a small { display: block; color: var(--ink-dim); font-size: 13px; margin-top: 4px; font-weight: 400; }
+.db-contact-row .value a:hover small { color: var(--db-accent); }
 .db-booking {
   background: var(--surface);
   border: 1px solid var(--line);

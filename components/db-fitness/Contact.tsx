@@ -15,8 +15,7 @@ export default function Contact() {
             Lass uns <span className="graff">trainieren.</span>
           </h2>
           <p className="db-contact-lede">
-            Schreib mir, ruf an, oder buch direkt eine kostenlose Probe-Einheit. Du findest mich in Sonsbeck,
-            Hochstraße 143 · Parkplätze direkt vor der Tür.
+            Schreib mir, ruf an, oder buch direkt eine kostenlose Probe-Einheit. Du findest mich in <a href="https://maps.app.goo.gl/kwbV6ptLNcjRQCVC6" target="_blank" rel="noopener noreferrer">Sonsbeck, Hochstraße 143</a> · Parkplätze direkt vor der Tür.
           </p>
 
           <div className="db-contact-info">
@@ -29,8 +28,10 @@ export default function Contact() {
               </span>
               <span className="label">Studio</span>
               <span className="value">
-                Studio DB Fitness
-                <small>Hochstraße 143 · 47665 Sonsbeck</small>
+                <a href="https://maps.app.goo.gl/kwbV6ptLNcjRQCVC6" target="_blank" rel="noopener noreferrer">
+                  Studio DB Fitness
+                  <small>Hochstraße 143 · 47665 Sonsbeck</small>
+                </a>
               </span>
             </div>
             <div className="db-contact-row">
