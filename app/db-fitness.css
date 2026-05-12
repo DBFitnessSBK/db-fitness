@@ -1012,10 +1012,8 @@ a { color: inherit; text-decoration: none; }
   padding: 12px 0;
   border-bottom: 1px solid rgba(255,255,255,.04);
   cursor: pointer;
-  transition: padding-left .18s ease;
 }
 .db-slot:last-child { border-bottom: 0; }
-.db-slot:hover { padding-left: 8px; }
 .db-slot:hover .db-slot-title { color: var(--db-accent); }
 .db-slot:hover .db-slot-time { color: var(--ink); }
 .db-slot-time {
