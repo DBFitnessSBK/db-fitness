@@ -5,17 +5,9 @@ import { useEffect, useState } from 'react'
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
   const [activeSection, setActiveSection] = useState('top')
-  const [scrollProgress, setScrollProgress] = useState(0)
-
   useEffect(() => {
     const updateNav = () => {
       setScrolled(window.scrollY > 24)
-      
-      // Calculate scroll progress
-      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight
-      const scrolled = window.scrollY
-      const progress = scrollHeight > 0 ? (scrolled / scrollHeight) * 100 : 0
-      setScrollProgress(progress)
     }
     window.addEventListener('scroll', updateNav, { passive: true })
     updateNav()
@@ -84,11 +76,6 @@ export default function Nav() {
           Menü
         </button>
       </div>
-      <div 
-        className="db-scroll-indicator" 
-        style={{ width: `${scrollProgress}%` }}
-        aria-hidden="true"
-      />
     </header>
   )
 }
