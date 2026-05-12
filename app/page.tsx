@@ -4,6 +4,7 @@ import Hero from '@/components/db-fitness/Hero'
 import Marquee from '@/components/db-fitness/Marquee'
 import Stats from '@/components/db-fitness/Stats'
 import About from '@/components/db-fitness/About'
+import Team from '@/components/db-fitness/Team'
 import Services from '@/components/db-fitness/Services'
 import Quote from '@/components/db-fitness/Quote'
 import Kursplan from '@/components/db-fitness/Kursplan'
@@ -20,6 +21,7 @@ export default function Page() {
       <Marquee />
       <Stats />
       <About />
+      <Team />
       <Services />
       <Quote />
       <Kursplan />
