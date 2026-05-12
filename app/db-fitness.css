@@ -10,8 +10,8 @@
   --ink-dim: #9b9b96;
   --ink-mute: #5a5a55;
   --db-accent: #ff5a1f;
-  --db-accent-2: #FF5A1E;
-  --db-accent-3: #01AAFF;
+  --db-accent-2: #ffd60a;
+  --db-accent-3: #00d4ff;
   --line: rgba(255,255,255,.08);
   --line-2: rgba(255,255,255,.14);
   --grain-opacity: .035;
@@ -293,7 +293,7 @@ a { color: inherit; text-decoration: none; }
   width: 8px; height: 8px;
   background: var(--db-accent-2);
   border-radius: 50%;
-  box-shadow: 0 0 0 4px rgba(255, 90, 30, .15);
+  box-shadow: 0 0 0 4px rgba(255,214,10,.15);
   animation: db-pulse 1.4s ease-in-out infinite;
   flex-shrink: 0;
 }
