@@ -3,20 +3,20 @@ export default function Team() {
     {
       name: 'Sarah Müller',
       role: 'Fitnesstrainerin',
-      description: 'Spezialisiert auf Kraft- und Ausdauertraining. Mit 7 Jahren Erfahrung hilft Sarah ihren Kunden, ihre Ziele zu erreichen.',
-      initials: 'SM',
+      description: 'Spezialisiert auf Kraft- und Ausdauertraining. Mit 7 Jahren Erfahrung hilft Sarah ihren Kunden, ihre Ziele nachhaltig zu erreichen.',
+      image: '/team/sarah-mueller.jpg',
     },
     {
       name: 'Marcus Weber',
       role: 'Personal Trainer',
-      description: 'Experte für funktionales Training und Rehabilitation. Marcus kombiniert Wissenschaft mit praktischer Erfahrung.',
-      initials: 'MW',
+      description: 'Experte für funktionales Training und Rehabilitation. Marcus kombiniert sportwissenschaftliche Methodik mit praktischer Erfahrung.',
+      image: '/team/marcus-weber.jpg',
     },
     {
       name: 'Julia Hoffmann',
-      role: 'Fitnesstrainerin B',
+      role: 'Fitnesstrainerin',
       description: 'Leidenschaftlich im Gruppentraining und Einzelbetreuung. Julia motiviert ihre Trainierenden mit Energie und Geduld.',
-      initials: 'JH',
+      image: '/team/julia-hoffmann.jpg',
     },
   ]
 
@@ -24,15 +24,19 @@ export default function Team() {
     <section className="db-team" id="team">
       <div className="db-container">
         <div className="db-eyebrow">Unser Team</div>
-        <h2 className="db-team-title">Fachkompetenz & Leidenschaft</h2>
-        
+        <h2 className="db-team-title">Fachkompetenz &amp; Leidenschaft</h2>
+
         <div className="db-team-grid">
           {trainers.map((trainer) => (
             <div key={trainer.name} className="db-team-card">
-              <div className="db-team-avatar">{trainer.initials}</div>
-              <h3 className="db-team-name">{trainer.name}</h3>
-              <div className="db-team-role">{trainer.role}</div>
-              <p className="db-team-desc">{trainer.description}</p>
+              <div className="db-team-photo">
+                <img src={trainer.image} alt={trainer.name} />
+              </div>
+              <div className="db-team-body">
+                <div className="db-team-role">{trainer.role}</div>
+                <h3 className="db-team-name">{trainer.name}</h3>
+                <p className="db-team-desc">{trainer.description}</p>
+              </div>
             </div>
           ))}
         </div>
