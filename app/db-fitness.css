@@ -1197,7 +1197,7 @@ a { color: inherit; text-decoration: none; }
   font-family: var(--graffiti);
   display: inline-block;
   transform: rotate(-4deg);
-  margin-right: -.05em;
+  margin-right: .15em;
 }
 .db-insta-meta {
   display: flex;
