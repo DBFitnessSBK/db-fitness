@@ -41,22 +41,24 @@ async function fetchBeholdFeed(): Promise<BeholdPost[]> {
       next: { revalidate: 3600 }, // Cache for 1 hour
     })
 
-    if (!response.ok) throw new Error('Failed to fetch Behold feed')
+    if (!response.ok) throw new Error(`Failed to fetch Behold feed: ${response.status}`)
 
     const data = await response.json()
+    console.log('[v0] Behold response:', data)
 
-    // Behold returns an object with posts array
-    const posts = Array.isArray(data) ? data : (data.posts || [])
+    // Behold API returns an object with 'feed' array containing posts
+    const posts = data.feed || data.posts || (Array.isArray(data) ? data : [])
+    
     return posts
       .slice(0, 6)
       .map((post: any) => ({
         id: post.id || post.url || Math.random().toString(),
         link: post.url || post.link || 'https://instagram.com/db_fitness86',
-        image: post.image || post.src || '',
-        caption: post.caption || post.title || '',
+        image: post.image || post.media_url || post.src || '',
+        caption: post.caption || post.text || post.title || '',
       }))
   } catch (error) {
-    console.error('Error fetching Behold feed:', error)
+    console.error('[v0] Error fetching Behold feed:', error)
     return []
   }
 }
