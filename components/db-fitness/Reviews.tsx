@@ -1,33 +1,24 @@
 const REVIEWS = [
   {
-    name: 'Sabrina M.',
+    name: 'Insa',
     rating: 5,
-    date: 'März 2025',
-    text: 'Daniel ist ein absoluter Profi. Er hat mein Training komplett auf meine Ziele abgestimmt und ich habe in nur 3 Monaten mehr erreicht als in den Jahren davor. Klare Empfehlung!',
+    date: 'Mai 2026',
+    link: 'https://maps.app.goo.gl/nQmW3ioZCAAAuBn99',
+    text: 'Ein tolles Trainerteam, es gibt viele verschiedene Kurse zu verschiedenen Zeiten, somit gibt es keine Ausrede keinen Sport zu machen 😉. Auch als Anfänger ist man bei DB Fitness sehr gut aufgehoben. Ich kann es nur empfehlen, es macht süchtig !! …',
   },
   {
-    name: 'Thorsten K.',
+    name: 'Melina',
     rating: 5,
-    date: 'Januar 2025',
-    text: 'Das Studio ist top ausgestattet und die Atmosphäre ist einzigartig. Daniel motiviert ohne Druck und weiß genau, was er tut. Ich komme jetzt seit einem Jahr und bin begeistert.',
+    date: 'Mai 2026',
+    link: 'https://maps.app.goo.gl/wsXkxGXxeJWwXwFUA',
+    text: 'Seit inzwischen drei Jahren besuche ich die Kurse und bin nach wie vor sehr zufrieden. Die Übungen sind zwar oft anstrengend und fordernd, aber genau das macht das Training effektiv – und gleichzeitig macht es auch wirklich Spaß. Besonders positiv finde ich, dass immer auf die Teilnehmer eingegangen wird. Übungen werden bei Bedarf individuell angepasst, sodass wirklich jeder mitmachen kann, unabhängig vom Fitnesslevel. Die Atmosphäre ist außerdem sehr angenehm, alle sind freundlich und motivierend. Ein großes Lob an Daniel und Steffi – man fühlt sich bei euch einfach gut aufgehoben. Absolute Empfehlung!',
   },
   {
-    name: 'Laura B.',
+    name: 'Silke',
     rating: 5,
-    date: 'Februar 2025',
-    text: 'Endlich ein Personal Trainer, der wirklich zuhört. Daniel nimmt sich Zeit, erklärt die Übungen detailliert und passt den Plan laufend an. Das Studio hat eine tolle Energie.',
-  },
-  {
-    name: 'Marcus H.',
-    rating: 5,
-    date: 'Dezember 2024',
-    text: 'Ich war skeptisch ob Personal Training etwas für mich ist, aber Daniel hat mich sofort überzeugt. Professionell, freundlich und mit echtem Herzblut dabei.',
-  },
-  {
-    name: 'Julia R.',
-    rating: 5,
-    date: 'April 2025',
-    text: 'Lauftraining mit Daniel hat mir geholfen, meinen ersten 10K zu finishen. Er hat mir gezeigt wie wichtig die richtige Technik ist. Danke für die tolle Begleitung!',
+    date: 'August 2024',
+    link: 'https://maps.app.goo.gl/B8LT784UVpg2e76w9',
+    text: 'Super Training, super Kommunikation – leistungsgerecht und herausfordernd zugleich. Tolles Trainerteam, seit 3,5 Jahren dabei.',
   },
 ]
 
@@ -81,7 +72,13 @@ export default function Reviews() {
 
         <div className="db-reviews-grid">
           {REVIEWS.map((review, i) => (
-            <article key={i} className="db-review-card">
+            <a
+              key={i}
+              href={review.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="db-review-card"
+            >
               <header className="db-review-card-header">
                 <div className="db-review-avatar" aria-hidden="true">
                   {review.name.charAt(0)}
@@ -99,7 +96,7 @@ export default function Reviews() {
               </header>
               <Stars count={review.rating} />
               <p className="db-review-text">{review.text}</p>
-            </article>
+            </a>
           ))}
         </div>
       </div>

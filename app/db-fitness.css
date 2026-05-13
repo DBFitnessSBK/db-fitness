@@ -1791,9 +1791,15 @@ a { color: inherit; text-decoration: none; }
   display: flex;
   flex-direction: column;
   gap: 14px;
-  transition: border-color .2s ease;
+  transition: border-color .2s ease, background .2s ease, transform .2s ease;
+  cursor: pointer;
+  text-decoration: none;
 }
-.db-review-card:hover { border-color: var(--line-2); }
+.db-review-card:hover {
+  border-color: var(--db-accent);
+  background: var(--surface-2);
+  transform: translateY(-2px);
+}
 .db-review-card-header {
   display: flex;
   align-items: center;
