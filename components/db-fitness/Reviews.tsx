@@ -1,3 +1,7 @@
+'use client'
+
+import { useState } from 'react'
+
 const REVIEWS = [
   {
     name: 'Insa',
@@ -21,10 +25,6 @@ const REVIEWS = [
     text: 'Super Training, super Kommunikation – leistungsgerecht und herausfordernd zugleich. Tolles Trainerteam, seit 3,5 Jahren dabei.',
   },
 ]
-
-'use client'
-
-import { useState } from 'react'
 
 const CLAMP_LINES = 4
 
