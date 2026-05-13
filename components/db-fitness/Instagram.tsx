@@ -27,10 +27,43 @@ const InstaIcon = () => (
   </svg>
 )
 
-const GYM_WIDE = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/gym-wide-vKH4V1F9tRfAX148kpOo22SceKXbkb.jpeg'
-const GYM_BEAST = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/gym-beastmode-CDSuVQtKSeFMRrmKZOhoXSkUdZLABn.jpeg'
+interface BeholdPost {
+  id: string
+  link: string
+  image: string
+  caption?: string
+}
 
-export default function Instagram() {
+async function fetchBeholdFeed(): Promise<BeholdPost[]> {
+  try {
+    const feedUrl = process.env.BEHOLD_FEED_URL || 'https://feeds.behold.so/zFgp2Jbbk23Ovf1ZUOhq'
+    const response = await fetch(feedUrl, {
+      next: { revalidate: 3600 }, // Cache for 1 hour
+    })
+
+    if (!response.ok) throw new Error('Failed to fetch Behold feed')
+
+    const data = await response.json()
+
+    // Behold returns an object with posts array
+    const posts = Array.isArray(data) ? data : (data.posts || [])
+    return posts
+      .slice(0, 6)
+      .map((post: any) => ({
+        id: post.id || post.url || Math.random().toString(),
+        link: post.url || post.link || 'https://instagram.com/db_fitness86',
+        image: post.image || post.src || '',
+        caption: post.caption || post.title || '',
+      }))
+  } catch (error) {
+    console.error('Error fetching Behold feed:', error)
+    return []
+  }
+}
+
+export default async function Instagram() {
+  const posts = await fetchBeholdFeed()
+
   return (
     <section className="db-insta" id="insta">
       <div className="db-container">
@@ -42,12 +75,6 @@ export default function Instagram() {
             </h2>
           </div>
           <div className="db-insta-meta">
-            <div className="item">
-              <strong>2.4K</strong>Follower
-            </div>
-            <div className="item">
-              <strong>318</strong>Beiträge
-            </div>
             <a className="db-btn db-btn-primary" href="https://www.instagram.com/db_fitness86/" target="_blank" rel="noopener noreferrer">
               Folgen
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
@@ -57,127 +84,33 @@ export default function Instagram() {
           </div>
         </div>
 
-        <div className="db-insta-grid">
-          {/* Post 1 */}
-          <a className="db-insta-post" href="https://www.instagram.com/db_fitness86/" target="_blank" rel="noopener noreferrer">
-            <span className="db-insta-type live">● LIVE REEL</span>
-            <span className="db-insta-corner"><VideoIcon /></span>
-            <img src={GYM_BEAST} alt="Beast Mode Workout" />
-            <div className="db-insta-overlay">
-              <div className="caption">Mittwoch Abend = Schlingentraining. Wer kommt?</div>
-              <div className="meta">
-                <span><HeartIcon />184</span>
-                <span><CommentIcon />22</span>
-              </div>
-            </div>
-          </a>
-
-          {/* Post 2 */}
-          <a className="db-insta-post" href="https://www.instagram.com/db_fitness86/" target="_blank" rel="noopener noreferrer">
-            <span className="db-insta-type">POST</span>
-            <span className="db-insta-corner"><PhotoIcon /></span>
-            <div className="db-insta-placeholder">
-              <div className="title">never<br />give up</div>
-            </div>
-            <div className="db-insta-overlay">
-              <div className="caption">Tag 47/90. Form über Ego. Immer.</div>
-              <div className="meta">
-                <span><HeartIcon />241</span>
-                <span><CommentIcon />18</span>
-              </div>
-            </div>
-          </a>
-
-          {/* Post 3 */}
-          <a className="db-insta-post" href="https://www.instagram.com/db_fitness86/" target="_blank" rel="noopener noreferrer">
-            <span className="db-insta-type">REEL</span>
-            <span className="db-insta-corner"><VideoIcon /></span>
-            <img src={GYM_WIDE} alt="Studio Tour" />
-            <div className="db-insta-overlay">
-              <div className="caption">Mein zweites Zuhause. Studiotour 60 Sek →</div>
-              <div className="meta">
-                <span><HeartIcon />362</span>
-                <span><CommentIcon />41</span>
-              </div>
-            </div>
-          </a>
-
-          {/* Post 4 */}
-          <a className="db-insta-post" href="https://www.instagram.com/db_fitness86/" target="_blank" rel="noopener noreferrer">
-            <span className="db-insta-type">POST</span>
-            <span className="db-insta-corner"><PhotoIcon /></span>
-            <div className="db-insta-placeholder alt2">
-              <div className="title">you<br />vs<br />you</div>
-            </div>
-            <div className="db-insta-overlay">
-              <div className="caption">Der einzige Gegner, der zählt. Immer.</div>
-              <div className="meta">
-                <span><HeartIcon />512</span>
-                <span><CommentIcon />33</span>
-              </div>
-            </div>
-          </a>
-
-          {/* Post 5 */}
-          <a className="db-insta-post" href="https://www.instagram.com/db_fitness86/" target="_blank" rel="noopener noreferrer">
-            <span className="db-insta-type">POST</span>
-            <span className="db-insta-corner"><PhotoIcon /></span>
-            <div className="db-insta-placeholder alt3">
-              <div className="title">PUMP<br />&amp; RUN<br />↗</div>
-            </div>
-            <div className="db-insta-overlay">
-              <div className="caption">Samstag 9:00 · vier Plätze frei.</div>
-              <div className="meta">
-                <span><HeartIcon />129</span>
-                <span><CommentIcon />12</span>
-              </div>
-            </div>
-          </a>
-
-          {/* Post 6 */}
-          <a className="db-insta-post" href="https://www.instagram.com/db_fitness86/" target="_blank" rel="noopener noreferrer">
-            <span className="db-insta-type">REEL</span>
-            <span className="db-insta-corner"><VideoIcon /></span>
-            <img src={GYM_BEAST} alt="Functional" />
-            <div className="db-insta-overlay">
-              <div className="caption">Functional Flow · voller Body in 7 Sätzen.</div>
-              <div className="meta">
-                <span><HeartIcon />289</span>
-                <span><CommentIcon />27</span>
-              </div>
-            </div>
-          </a>
-
-          {/* Post 7 */}
-          <a className="db-insta-post" href="https://www.instagram.com/db_fitness86/" target="_blank" rel="noopener noreferrer">
-            <span className="db-insta-type">POST</span>
-            <span className="db-insta-corner"><PhotoIcon /></span>
-            <div className="db-insta-placeholder alt">
-              <div className="title">beast<br />mode</div>
-            </div>
-            <div className="db-insta-overlay">
-              <div className="caption">5 Uhr Trainings-Crew, ihr seid Tier.</div>
-              <div className="meta">
-                <span><HeartIcon />198</span>
-                <span><CommentIcon />15</span>
-              </div>
-            </div>
-          </a>
-
-          {/* Post 8 */}
-          <a className="db-insta-post" href="https://www.instagram.com/db_fitness86/" target="_blank" rel="noopener noreferrer">
-            <span className="db-insta-type">POST</span>
-            <span className="db-insta-corner"><PhotoIcon /></span>
-            <img src={GYM_WIDE} alt="Studio" />
-            <div className="db-insta-overlay">
-              <div className="caption">Sonntag offen ab 10:00. Open Floor.</div>
-              <div className="meta">
-                <span><HeartIcon />156</span>
-                <span><CommentIcon />9</span>
-              </div>
-            </div>
-          </a>
-        </div>
+        {posts.length > 0 ? (
+          <div className="db-insta-grid">
+            {posts.map((post) => (
+              <a
+                key={post.id}
+                className="db-insta-post"
+                href={post.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={post.caption || 'Instagram Post'}
+              >
+                <span className="db-insta-corner"><PhotoIcon /></span>
+                <img src={post.image} alt={post.caption || 'Instagram Post'} />
+                <div className="db-insta-overlay">
+                  {post.caption && <div className="caption">{post.caption}</div>}
+                  <div className="meta">
+                    <span><HeartIcon />—</span>
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        ) : (
+          <p style={{ color: 'var(--ink-dim)', textAlign: 'center', padding: '40px 0' }}>
+            Instagram Feed wird geladen...
+          </p>
+        )}
 
         <div className="db-insta-cta">
           <a className="db-btn db-btn-ghost" href="https://www.instagram.com/db_fitness86/" target="_blank" rel="noopener noreferrer">
