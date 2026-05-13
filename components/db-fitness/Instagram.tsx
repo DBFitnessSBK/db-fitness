@@ -37,25 +37,41 @@ interface BeholdPost {
 async function fetchBeholdFeed(): Promise<BeholdPost[]> {
   try {
     const feedUrl = process.env.BEHOLD_FEED_URL || 'https://feeds.behold.so/zFgp2Jbbk23Ovf1ZUOhq'
+    console.log('[v0] Fetching from:', feedUrl)
+    
     const response = await fetch(feedUrl, {
-      next: { revalidate: 3600 }, // Cache for 1 hour
+      next: { revalidate: 3600 },
+      headers: { 'Accept': 'application/json' }
     })
 
-    if (!response.ok) throw new Error(`Failed to fetch Behold feed: ${response.status}`)
+    console.log('[v0] Behold status:', response.status)
+    if (!response.ok) throw new Error(`Failed to fetch: ${response.status}`)
 
     const data = await response.json()
-    console.log('[v0] Behold response:', data)
+    console.log('[v0] Behold data keys:', Object.keys(data))
+    console.log('[v0] Behold data:', JSON.stringify(data).substring(0, 500))
 
-    // Behold API returns an object with 'feed' array containing posts
-    const posts = data.feed || data.posts || (Array.isArray(data) ? data : [])
+    // Try multiple possible response structures
+    let posts = []
+    if (Array.isArray(data)) {
+      posts = data
+    } else if (data.feed && Array.isArray(data.feed)) {
+      posts = data.feed
+    } else if (data.posts && Array.isArray(data.posts)) {
+      posts = data.posts
+    } else if (data.data && Array.isArray(data.data)) {
+      posts = data.data
+    }
+
+    console.log('[v0] Found posts count:', posts.length)
     
     return posts
       .slice(0, 6)
       .map((post: any) => ({
         id: post.id || post.url || Math.random().toString(),
         link: post.url || post.link || 'https://instagram.com/db_fitness86',
-        image: post.image || post.media_url || post.src || '',
-        caption: post.caption || post.text || post.title || '',
+        image: post.image || post.media_url || post.src || post.thumbnail || '',
+        caption: post.caption || post.text || post.title || post.description || '',
       }))
   } catch (error) {
     console.error('[v0] Error fetching Behold feed:', error)
