@@ -13,21 +13,14 @@ const NAV_LINKS = [
   { href: '#contact', label: 'Kontakt' },
 ]
 
-const SCROLL_FADE_DISTANCE = 240
-const NAV_BG_MIN_OPACITY = 0.4
-
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
-  const [bgOpacity, setBgOpacity] = useState(0)
   const [activeSection, setActiveSection] = useState('top')
   const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
     const updateNav = () => {
-      const y = window.scrollY
-      setScrolled(y > 24)
-      const progress = Math.min(Math.max(y / SCROLL_FADE_DISTANCE, 0), 1)
-      setBgOpacity(NAV_BG_MIN_OPACITY + (1 - NAV_BG_MIN_OPACITY) * progress)
+      setScrolled(window.scrollY > 24)
     }
     window.addEventListener('scroll', updateNav, { passive: true })
     updateNav()
@@ -64,7 +57,6 @@ export default function Nav() {
       <header
         className={`db-nav${scrolled ? ' scrolled' : ''}`}
         id="nav"
-        style={{ '--nav-bg-opacity': bgOpacity } as React.CSSProperties}
       >
         <div className="db-container db-nav-inner">
           <a className="db-logo" href="#top" aria-label="DB Fitness · Startseite" onClick={closeMenu}>
