@@ -63,7 +63,11 @@ section[id], [id="top"] { scroll-margin-top: 80px; }
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  overflow-x: hidden;
+  /* overflow-x: clip (not hidden) — hidden creates a scroll container that
+     breaks position: fixed for descendants on iOS Safari, causing the nav
+     to detach from the top of the screen during momentum scroll / URL-bar
+     animation. clip clips the same content without that side effect. */
+  overflow-x: clip;
   position: relative;
 }
 
@@ -123,12 +127,13 @@ a { color: inherit; text-decoration: none; }
    NAV
    ============================================================ */
 .db-nav {
+  --nav-bg-opacity: 0.4;
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 50;
   padding: calc(18px + env(safe-area-inset-top)) 0 18px;
-  background: var(--bg);
-  border-bottom: 1px solid rgba(255, 255, 255, .08);
+  background: rgba(var(--bg-rgb), var(--nav-bg-opacity));
+  border-bottom: 1px solid rgba(255, 255, 255, calc(.08 * var(--nav-bg-opacity)));
   transition: padding .25s ease;
 }
 .db-nav.scrolled {
