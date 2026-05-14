@@ -32,22 +32,6 @@ export default function Nav() {
     window.addEventListener('scroll', updateNav, { passive: true })
     updateNav()
 
-    // iOS Safari only initialises the position:fixed compositor layer on
-    // the first scroll event — until then the nav scrolls with content
-    // (visible as "page content appears above the nav"). Clicking a hash
-    // link triggers a programmatic scroll that fixes it; do the same on
-    // mount so the nav is correct from load. Override smooth scroll-
-    // behavior so this is invisible.
-    requestAnimationFrame(() => {
-      const root = document.documentElement
-      const prevBehavior = root.style.scrollBehavior
-      root.style.scrollBehavior = 'auto'
-      const y = window.scrollY
-      window.scrollTo(0, y + 1)
-      window.scrollTo(0, y)
-      root.style.scrollBehavior = prevBehavior
-    })
-
     const sectionIds = ['top', 'about', 'team', 'services', 'kursplan', 'reviews', 'insta', 'contact']
     const setActive = () => {
       const y = window.scrollY + window.innerHeight * 0.35
@@ -72,6 +56,19 @@ export default function Nav() {
     document.body.style.overflow = menuOpen ? 'hidden' : ''
     return () => { document.body.style.overflow = '' }
   }, [menuOpen])
+
+  // iOS Safari: position:fixed nav scrolls with content until the page's
+  // compositor is forced to reinit. Empirically, the only thing that fixes
+  // it on this site is opening the mobile menu (which toggles
+  // document.body.style.overflow) and then closing it. Mimic that toggle
+  // on mount so the nav is fixed from page load.
+  useEffect(() => {
+    document.body.style.overflow = 'hidden'
+    const id = window.setTimeout(() => {
+      document.body.style.overflow = ''
+    }, 60)
+    return () => window.clearTimeout(id)
+  }, [])
 
   const closeMenu = () => setMenuOpen(false)
 
