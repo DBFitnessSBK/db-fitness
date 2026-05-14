@@ -135,6 +135,13 @@ a { color: inherit; text-decoration: none; }
   background: rgba(var(--bg-rgb), var(--nav-bg-opacity));
   border-bottom: 1px solid rgba(255, 255, 255, calc(.08 * var(--nav-bg-opacity)));
   transition: padding .25s ease;
+  /* Promote to its own compositor layer at first paint so iOS Safari
+     treats it as a fixed element from load — without this iOS lazily
+     initialises the fixed-positioning layer only after the first scroll
+     event, which makes the nav scroll with content until the user
+     clicks a hash link. */
+  transform: translateZ(0);
+  will-change: transform;
 }
 .db-nav.scrolled {
   padding: calc(12px + env(safe-area-inset-top)) 0 12px;

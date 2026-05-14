@@ -32,6 +32,22 @@ export default function Nav() {
     window.addEventListener('scroll', updateNav, { passive: true })
     updateNav()
 
+    // iOS Safari only initialises the position:fixed compositor layer on
+    // the first scroll event — until then the nav scrolls with content
+    // (visible as "page content appears above the nav"). Clicking a hash
+    // link triggers a programmatic scroll that fixes it; do the same on
+    // mount so the nav is correct from load. Override smooth scroll-
+    // behavior so this is invisible.
+    requestAnimationFrame(() => {
+      const root = document.documentElement
+      const prevBehavior = root.style.scrollBehavior
+      root.style.scrollBehavior = 'auto'
+      const y = window.scrollY
+      window.scrollTo(0, y + 1)
+      window.scrollTo(0, y)
+      root.style.scrollBehavior = prevBehavior
+    })
+
     const sectionIds = ['top', 'about', 'team', 'services', 'kursplan', 'reviews', 'insta', 'contact']
     const setActive = () => {
       const y = window.scrollY + window.innerHeight * 0.35
