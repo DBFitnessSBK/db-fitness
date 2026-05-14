@@ -128,6 +128,8 @@ a { color: inherit; text-decoration: none; }
   padding: calc(18px + env(safe-area-inset-top)) 0 18px;
   background: var(--bg);
   transition: padding .25s ease;
+  transform: translateZ(0);
+  will-change: transform;
 }
 .db-nav.scrolled {
   padding: calc(12px + env(safe-area-inset-top)) 0 12px;
