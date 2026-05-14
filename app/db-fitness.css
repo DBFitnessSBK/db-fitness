@@ -63,7 +63,10 @@ section[id], [id="top"] { scroll-margin-top: 80px; }
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  overflow-x: hidden;
+  /* overflow-x: clip (not hidden) — hidden promotes this element to a
+     scroll container, which would make position: sticky on the nav
+     stick within .db-body's scroll instead of the page viewport. */
+  overflow-x: clip;
   position: relative;
 }
 
@@ -124,15 +127,13 @@ a { color: inherit; text-decoration: none; }
    ============================================================ */
 .db-nav {
   --nav-bg-opacity: 0.4;
-  position: fixed;
-  top: 0; left: 0; right: 0;
+  position: sticky;
+  top: 0;
   z-index: 50;
   padding: calc(18px + env(safe-area-inset-top)) 0 18px;
   background: rgba(var(--bg-rgb), var(--nav-bg-opacity));
   border-bottom: 1px solid rgba(255, 255, 255, calc(.08 * var(--nav-bg-opacity)));
   transition: padding .25s ease;
-  transform: translateZ(0);
-  will-change: transform;
 }
 .db-nav.scrolled {
   padding: calc(12px + env(safe-area-inset-top)) 0 12px;
