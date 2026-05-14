@@ -31,6 +31,18 @@ export default function ImpressumPage() {
 
       <p>Berufsbezeichnung: Fitness Trainer</p>
 
+      <p>
+        Umsatzsteuer-Identifikationsnummer gem. § 27a UStG:<br />
+        DE000000000 {/* TODO: durch tatsächliche USt-IdNr. ersetzen */}
+      </p>
+
+      <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV:</h2>
+      <p>
+        Daniel van der Bij<br />
+        Löwensteg 10<br />
+        47665 Sonsbeck
+      </p>
+
       <h2>Alternative Streitbeilegung:</h2>
       <p>
         Die Europäische Kommission stellt eine Plattform für die außergerichtliche Online-Streitbeilegung

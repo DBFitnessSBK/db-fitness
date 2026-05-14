@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from 'next'
 import { Anton, Permanent_Marker, Inter } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
 const anton = Anton({
@@ -223,7 +222,6 @@ export default function RootLayout({
       </head>
       <body>
         {children}
-        <Analytics />
       </body>
     </html>
   )

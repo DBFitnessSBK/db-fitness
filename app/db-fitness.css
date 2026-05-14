@@ -28,6 +28,9 @@ html { scroll-behavior: smooth; }
   html { scroll-behavior: auto; }
 }
 section[id], [id="top"] { scroll-margin-top: 80px; }
+@media (max-width: 720px) {
+  section[id], [id="top"] { scroll-margin-top: 72px; }
+}
 
 /* Skip link for keyboard / screen-reader users */
 .db-skip-link {
@@ -1724,6 +1727,9 @@ a { color: inherit; text-decoration: none; }
 }
 @media (max-width: 900px) {
   .db-contact-grid { grid-template-columns: 1fr; gap: 48px; }
+  .db-map { aspect-ratio: auto; }
+  .db-map iframe { aspect-ratio: 4 / 3; height: auto; }
+  .db-map-placeholder { position: static; padding: 56px 32px; min-height: 320px; }
 }
 
 /* ============================================================
@@ -2101,4 +2107,17 @@ a { color: inherit; text-decoration: none; }
 .db-legal-footer-inner nav a:hover { color: var(--db-accent); }
 @media (max-width: 560px) {
   .db-legal-footer-inner { flex-direction: column; align-items: flex-start; }
+}
+
+/* Mobile: tighten section vertical padding so anchor scrolls land near the title.
+   Placed at end of file so it overrides per-section base rules in source order. */
+@media (max-width: 720px) {
+  .db-about,
+  .db-team,
+  .db-services,
+  .db-quote,
+  .db-kursplan,
+  .db-insta,
+  .db-contact,
+  .db-reviews { padding-top: 72px; padding-bottom: 64px; }
 }
