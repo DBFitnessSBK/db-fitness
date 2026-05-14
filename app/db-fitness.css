@@ -128,11 +128,14 @@ a { color: inherit; text-decoration: none; }
   top: 0; left: 0; right: 0;
   z-index: 50;
   padding: calc(18px + env(safe-area-inset-top)) 0 18px;
-  background: rgba(var(--bg-rgb), var(--nav-bg-opacity));
+  /* Top strip covering the safe-area inset (iPhone notch / status bar) is
+     fully opaque so the nav reads as attached to the top of the screen;
+     the rest uses the translucent design overlay. */
+  background:
+    linear-gradient(var(--bg), var(--bg)) top/100% env(safe-area-inset-top) no-repeat,
+    rgba(var(--bg-rgb), var(--nav-bg-opacity));
   border-bottom: 1px solid rgba(255, 255, 255, calc(.08 * var(--nav-bg-opacity)));
   transition: padding .25s ease;
-  transform: translateZ(0);
-  will-change: transform;
 }
 .db-nav.scrolled {
   padding: calc(12px + env(safe-area-inset-top)) 0 12px;
