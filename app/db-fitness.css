@@ -136,6 +136,10 @@ a { color: inherit; text-decoration: none; }
   backdrop-filter: blur(14px) saturate(140%);
   border-bottom: 1px solid var(--line);
 }
+@media (max-width: 720px) {
+  .db-nav { padding: calc(env(safe-area-inset-top) + 4px) 0 12px; }
+  .db-nav.scrolled { padding: calc(env(safe-area-inset-top) + 4px) 0 10px; }
+}
 .db-nav-inner {
   display: flex;
   align-items: center;
