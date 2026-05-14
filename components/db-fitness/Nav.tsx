@@ -14,6 +14,7 @@ const NAV_LINKS = [
 ]
 
 const SCROLL_FADE_DISTANCE = 240
+const NAV_BG_MIN_OPACITY = 0.4
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
@@ -25,7 +26,8 @@ export default function Nav() {
     const updateNav = () => {
       const y = window.scrollY
       setScrolled(y > 24)
-      setBgOpacity(Math.min(Math.max(y / SCROLL_FADE_DISTANCE, 0), 1))
+      const progress = Math.min(Math.max(y / SCROLL_FADE_DISTANCE, 0), 1)
+      setBgOpacity(NAV_BG_MIN_OPACITY + (1 - NAV_BG_MIN_OPACITY) * progress)
     }
     window.addEventListener('scroll', updateNav, { passive: true })
     updateNav()
