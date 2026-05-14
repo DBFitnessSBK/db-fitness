@@ -15,23 +15,30 @@ import Footer from '@/components/db-fitness/Footer'
 
 export default function Page() {
   return (
-    <div className="db-body">
-      <a className="db-skip-link" href="#main">Zum Hauptinhalt springen</a>
+    <>
+      {/* Nav rendered OUTSIDE .db-body so position:fixed isn't anchored to
+          an ancestor with overflow-x: hidden + position: relative — that
+          combination breaks fixed positioning on iOS Safari (the nav
+          scrolls with content until a layout-recalculating interaction,
+          such as opening the mobile menu, forces it back to the viewport). */}
       <Nav />
-      <main id="main">
-        <Hero />
-        <Marquee />
-        <Stats />
-        <About />
-        <Team />
-        <Services />
-        <Quote />
-        <Kursplan />
-        <Reviews />
-        <Instagram />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+      <div className="db-body">
+        <a className="db-skip-link" href="#main">Zum Hauptinhalt springen</a>
+        <main id="main">
+          <Hero />
+          <Marquee />
+          <Stats />
+          <About />
+          <Team />
+          <Services />
+          <Quote />
+          <Kursplan />
+          <Reviews />
+          <Instagram />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
+    </>
   )
 }

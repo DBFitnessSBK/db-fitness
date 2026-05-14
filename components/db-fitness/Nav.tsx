@@ -57,19 +57,6 @@ export default function Nav() {
     return () => { document.body.style.overflow = '' }
   }, [menuOpen])
 
-  // iOS Safari: position:fixed nav scrolls with content until the page's
-  // compositor is forced to reinit. Empirically, the only thing that fixes
-  // it on this site is opening the mobile menu (which toggles
-  // document.body.style.overflow) and then closing it. Mimic that toggle
-  // on mount so the nav is fixed from page load.
-  useEffect(() => {
-    document.body.style.overflow = 'hidden'
-    const id = window.setTimeout(() => {
-      document.body.style.overflow = ''
-    }, 60)
-    return () => window.clearTimeout(id)
-  }, [])
-
   const closeMenu = () => setMenuOpen(false)
 
   return (
