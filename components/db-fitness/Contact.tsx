@@ -3,13 +3,12 @@
 import { useState } from 'react'
 
 export default function Contact() {
-  const [submitted, setSubmitted] = useState(false)
+  const [mapConsent, setMapConsent] = useState(false)
 
   return (
     <section className="db-contact" id="contact">
-      <div className="db-container db-contact-grid">
-        {/* Left */}
-        <div>
+      <div className="db-container">
+        <div className="db-contact-header">
           <div className="db-eyebrow">Kontakt &amp; Termin</div>
           <h2>
             Lass uns <span className="graff">trainieren.</span>
@@ -17,7 +16,9 @@ export default function Contact() {
           <p className="db-contact-lede">
             Schreib mir, ruf an, oder buch direkt eine kostenlose Probe-Einheit. Du findest mich in <a href="https://maps.app.goo.gl/kwbV6ptLNcjRQCVC6" target="_blank" rel="noopener noreferrer">Sonsbeck, Hochstraße 143</a> · Parkplätze direkt vor der Tür.
           </p>
+        </div>
 
+        <div className="db-contact-grid">
           <div className="db-contact-info">
             <div className="db-contact-row">
               <span className="icon">
@@ -82,60 +83,49 @@ export default function Contact() {
               <span className="label">Zeiten</span>
               <span className="value">
                 Mo – Fr · 06:00 – 21:00
-                <small>Sa &amp; So · nach Vereinbarung</small>
+                &nbsp;<small>Sa &amp; So · nach Vereinbarung</small>
               </span>
             </div>
           </div>
-        </div>
 
-        {/* Booking form */}
-        <aside className="db-booking">
-          <div className="db-booking-eyebrow">· Probetraining anfragen</div>
-          <h3>Erste Einheit auf mich.</h3>
-          <form
-            className="db-booking-form"
-            onSubmit={(e) => {
-              e.preventDefault()
-              setSubmitted(true)
-            }}
-          >
-            <div className="field-row">
-              <div className="field">
-                <label htmlFor="name">Name</label>
-                <input id="name" type="text" placeholder="Vor- und Nachname" required />
-              </div>
-              <div className="field">
-                <label htmlFor="email">E-Mail</label>
-                <input id="email" type="email" placeholder="du@beispiel.de" required />
-              </div>
-            </div>
-            <div className="field">
-              <label htmlFor="goal">Dein Ziel</label>
-              <select id="goal">
-                <option>Personal Training</option>
-                <option>Functional Fitness</option>
-                <option>Krafttraining</option>
-                <option>Laufkurse</option>
-                <option>Ernährungsberatung</option>
-                <option>Probetraining – noch unentschieden</option>
-              </select>
-            </div>
-            <div className="field">
-              <label htmlFor="msg">Kurz zu dir</label>
-              <textarea id="msg" rows={2} placeholder="Was soll ich wissen, bevor wir starten?" />
-            </div>
-            <button className="db-btn db-btn-primary submit" type="submit">
-              {submitted ? 'Anfrage gesendet ✓' : (
-                <>
-                  Anfrage senden
+          {/* Map */}
+          <aside className="db-map">
+            {mapConsent ? (
+              <iframe
+                title="Studio DB Fitness · Hochstraße 143, Sonsbeck"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2478.094908510018!2d6.37580067662584!3d51.603149571835296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c7633ea0ce626b%3A0xf008c787c2a17d34!2sDB%20Fitness-Personal%20Training%20by%20Daniel!5e0!3m2!1sen!2sde!4v1778729619157!5m2!1sen!2sde"
+                loading="lazy"
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            ) : (
+              <div className="db-map-placeholder">
+                <svg className="db-map-placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <path d="M20 10c0 7-8 12-8 12s-8-5-8-12a8 8 0 0 1 16 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                <h3>Karte laden?</h3>
+                <p>
+                  Beim Anzeigen der Karte werden Daten an Google übertragen. Mit einem Klick erlaubst du das Laden des Google Maps Inhalts.
+                </p>
+                <button type="button" className="db-btn db-btn-primary" onClick={() => setMapConsent(true)}>
+                  Karte anzeigen
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                     <path d="M5 12h14M13 6l6 6-6 6" />
                   </svg>
-                </>
-              )}
-            </button>
-          </form>
-        </aside>
+                </button>
+                <a
+                  className="db-map-placeholder-fallback"
+                  href="https://maps.app.goo.gl/kwbV6ptLNcjRQCVC6"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Stattdessen in Google Maps öffnen
+                </a>
+              </div>
+            )}
+          </aside>
+        </div>
       </div>
     </section>
   )

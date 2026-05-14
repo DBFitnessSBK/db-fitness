@@ -51,7 +51,7 @@ export default function Footer() {
         </div>
 
         <div className="db-footer-bottom">
-          <span>© 2026 DB Fitness · Daniel van der Bij · Sonsbeck</span>
+          <span>© {new Date().getFullYear()} DB Fitness · Daniel van der Bij · Sonsbeck</span>
           <div className="socials">
             <a href="https://www.instagram.com/db_fitness86/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
