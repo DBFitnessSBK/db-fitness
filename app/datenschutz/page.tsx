@@ -1,9 +1,20 @@
 import '../db-fitness.css'
 import LegalLayout from '@/components/db-fitness/LegalLayout'
 
-export const metadata = {
-  title: 'Datenschutz · DB Fitness',
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Datenschutz',
   description: 'Datenschutzerklärung von DB Fitness · Daniel van der Bij · Sonsbeck',
+  alternates: { canonical: '/datenschutz' },
+  robots: { index: false, follow: true },
+  openGraph: {
+    title: 'Datenschutz · DB Fitness',
+    description: 'Datenschutzerklärung von DB Fitness · Daniel van der Bij · Sonsbeck',
+    url: '/datenschutz',
+    type: 'website',
+    locale: 'de_DE',
+  },
 }
 
 export default function DatenschutzPage() {

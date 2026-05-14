@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { useEffect, useState } from 'react'
 
 const NAV_LINKS = [
@@ -53,11 +54,14 @@ export default function Nav() {
     <>
       <header className={`db-nav${scrolled ? ' scrolled' : ''}`} id="nav">
         <div className="db-container db-nav-inner">
-          <a className="db-logo" href="#top" aria-label="DB Fitness" onClick={closeMenu}>
-            <img
+          <a className="db-logo" href="#top" aria-label="DB Fitness · Startseite" onClick={closeMenu}>
+            <Image
               className="db-logo-img"
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-YTOilt1kw3eYthkUG9OrKGxXD0iQlS.png"
-              alt="DB Fitness"
+              src="/logo.png"
+              alt="DB Fitness Logo"
+              width={120}
+              height={40}
+              priority
             />
             <span className="db-logo-text">
               FITNESS

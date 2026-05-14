@@ -111,12 +111,12 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="db-services" id="services">
+    <section className="db-services" id="services" aria-labelledby="services-title">
       <div className="db-container">
         <div className="db-section-head">
           <div>
             <div className="db-eyebrow">Meine Leistungen</div>
-            <h2>
+            <h2 id="services-title">
               Acht Wege, dich <span className="graff">besser</span> zu machen.
             </h2>
           </div>

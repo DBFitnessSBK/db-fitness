@@ -1,12 +1,12 @@
 export default function About() {
   return (
-    <section className="db-about" id="about">
+    <section className="db-about" id="about" aria-labelledby="about-title">
       <div className="db-container db-about-grid">
         {/* Portrait */}
         <div className="db-about-portrait">
           <div className="db-about-portrait-tag">
             <span className="dot" />
-            Im Studio · Hochstraße 143
+            <address style={{ fontStyle: 'normal', display: 'inline' }}>Im Studio · Hochstraße 143, Sonsbeck</address>
           </div>
           <div className="db-about-badge">
             <div className="since">since &apos;19</div>
@@ -20,7 +20,7 @@ export default function About() {
         {/* Copy */}
         <div className="db-about-copy">
           <div className="db-eyebrow">Über Daniel</div>
-          <h2>
+          <h2 id="about-title">
             Sport ist <span className="graff">leidenschaft</span>
             <br />– keine pflicht.
           </h2>

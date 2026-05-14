@@ -39,12 +39,12 @@ function Slot({
 
 export default function Kursplan() {
   return (
-    <section className="db-kursplan" id="kursplan">
+    <section className="db-kursplan" id="kursplan" aria-labelledby="kursplan-title">
       <div className="db-container">
         <div className="db-kursplan-head">
           <div>
             <div className="db-eyebrow">Sei dabei</div>
-            <h2>
+            <h2 id="kursplan-title">
               Der <span className="graff">Kurs</span>
               <br />
               Plan.

@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default function Footer() {
   return (
     <footer className="db-footer">
@@ -44,8 +46,8 @@ export default function Footer() {
           <div className="db-footer-col">
             <h4>Rechtliches</h4>
             <ul>
-              <li><a href="/impressum">Impressum</a></li>
-              <li><a href="/datenschutz">Datenschutz</a></li>
+              <li><Link href="/impressum">Impressum</Link></li>
+              <li><Link href="/datenschutz">Datenschutz</Link></li>
             </ul>
           </div>
         </div>

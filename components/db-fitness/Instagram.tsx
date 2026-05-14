@@ -61,7 +61,7 @@ export default async function Instagram() {
   const posts = await fetchBeholdFeed()
 
   return (
-    <section className="db-insta" id="insta">
+    <section className="db-insta" id="insta" aria-label="Instagram · @db_fitness86">
       <div className="db-container">
         <div className="db-insta-head">
           <div>

@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 export default function Team() {
   const trainers = [
     {
@@ -21,23 +23,30 @@ export default function Team() {
   ]
 
   return (
-    <section className="db-team" id="team">
+    <section className="db-team" id="team" aria-labelledby="team-title">
       <div className="db-container">
         <div className="db-eyebrow">Unser Team</div>
-        <h2 className="db-team-title">Fachkompetenz &amp; Leidenschaft</h2>
+        <h2 className="db-team-title" id="team-title">Fachkompetenz &amp; Leidenschaft</h2>
 
         <div className="db-team-grid">
           {trainers.map((trainer) => (
-            <div key={trainer.name} className="db-team-card">
+            <article key={trainer.name} className="db-team-card">
               <div className="db-team-photo">
-                <img src={trainer.image} alt={trainer.name} />
+                <Image
+                  src={trainer.image}
+                  alt={`${trainer.name} · ${trainer.role} bei DB Fitness Sonsbeck`}
+                  width={600}
+                  height={600}
+                  sizes="(max-width: 768px) 90vw, (max-width: 1200px) 33vw, 400px"
+                  loading="lazy"
+                />
               </div>
               <div className="db-team-body">
                 <div className="db-team-role">{trainer.role}</div>
                 <h3 className="db-team-name">{trainer.name}</h3>
                 <p className="db-team-desc">{trainer.description}</p>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>

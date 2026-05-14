@@ -16,18 +16,21 @@ import Footer from '@/components/db-fitness/Footer'
 export default function Page() {
   return (
     <div className="db-body">
+      <a className="db-skip-link" href="#main">Zum Hauptinhalt springen</a>
       <Nav />
-      <Hero />
-      <Marquee />
-      <Stats />
-      <About />
-      <Team />
-      <Services />
-      <Quote />
-      <Kursplan />
-      <Reviews />
-      <Instagram />
-      <Contact />
+      <main id="main">
+        <Hero />
+        <Marquee />
+        <Stats />
+        <About />
+        <Team />
+        <Services />
+        <Quote />
+        <Kursplan />
+        <Reviews />
+        <Instagram />
+        <Contact />
+      </main>
       <Footer />
     </div>
   )

@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import type { ReactNode } from 'react'
 
@@ -7,10 +8,13 @@ export default function LegalLayout({ title, children }: { title: string; childr
       <header className="db-legal-header">
         <div className="db-container db-legal-header-inner">
           <Link className="db-logo" href="/" aria-label="DB Fitness – zurück zur Startseite">
-            <img
+            <Image
               className="db-logo-img"
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-YTOilt1kw3eYthkUG9OrKGxXD0iQlS.png"
-              alt="DB Fitness"
+              src="/logo.png"
+              alt="DB Fitness Logo"
+              width={120}
+              height={40}
+              priority
             />
             <span className="db-logo-text">
               FITNESS

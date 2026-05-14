@@ -1,13 +1,7 @@
 export default function Hero() {
   return (
-    <section className="db-hero" id="top">
+    <section className="db-hero" id="top" aria-label="Intro · DB Fitness Sonsbeck">
       <div className="db-hero-video">
-        <iframe
-          src="https://www.youtube.com/embed/iSSAk4XCsRA?autoplay=1&mute=1&loop=1&playlist=iSSAk4XCsRA&controls=0&modestbranding=1&playsinline=1&rel=0&showinfo=0&disablekb=1&iv_load_policy=3"
-          title="DB Fitness · Reel"
-          allow="autoplay; encrypted-media"
-          allowFullScreen
-        />
         <div className="db-video-fallback" aria-hidden="true" />
       </div>
       <div className="db-hero-overlay" />
@@ -15,7 +9,7 @@ export default function Hero() {
 
       <div className="db-hero-side">
         <span className="bar" />
-        REEL · DB FITNESS / 26
+        DB FITNESS · SONSBECK / 26
         <span className="bar" />
       </div>
 

@@ -1,6 +1,6 @@
 export default function Stats() {
   return (
-    <section className="db-stats">
+    <section className="db-stats" aria-label="Kennzahlen">
       <div className="db-container db-stats-grid">
         <div className="db-stat">
           <div className="db-stat-num"><em>15+</em></div>

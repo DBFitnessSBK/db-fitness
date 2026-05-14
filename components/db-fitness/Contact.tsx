@@ -6,11 +6,11 @@ export default function Contact() {
   const [mapConsent, setMapConsent] = useState(false)
 
   return (
-    <section className="db-contact" id="contact">
+    <section className="db-contact" id="contact" aria-labelledby="contact-title">
       <div className="db-container">
         <div className="db-contact-header">
           <div className="db-eyebrow">Kontakt &amp; Termin</div>
-          <h2>
+          <h2 id="contact-title">
             Lass uns <span className="graff">trainieren.</span>
           </h2>
           <p className="db-contact-lede">
@@ -19,7 +19,7 @@ export default function Contact() {
         </div>
 
         <div className="db-contact-grid">
-          <div className="db-contact-info">
+          <address className="db-contact-info" style={{ fontStyle: 'normal' }}>
             <div className="db-contact-row">
               <span className="icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -86,7 +86,7 @@ export default function Contact() {
                 &nbsp;<small>Sa &amp; So · nach Vereinbarung</small>
               </span>
             </div>
-          </div>
+          </address>
 
           {/* Map */}
           <aside className="db-map">
