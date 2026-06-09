@@ -23,7 +23,7 @@ export default function Page() {
         <Marquee />
         <Stats />
         <About />
-        <Team />
+        {/* <Team /> */}
         <Services />
         <Quote />
         <Kursplan />
