@@ -63,18 +63,6 @@ const services = [
     num: '05',
     icon: (
       <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="40" cy="14" r="5" /><path d="M30 30l8-8 10 4-4 10-12 4M20 50l10-20M14 56l6-6 12 0" />
-      </svg>
-    ),
-    title: 'Laufkurse',
-    tag: 'Outdoor · Sonsbeck',
-    desc: <>Von 5K bis Marathon. Laufstil-Analyse, individueller Trainingsplan und gemeinsame Einheiten · meine eigene <span style={{ color: '#FF5B1E' }}>Leidenschaft</span>, jetzt deine.</>,
-    meta1: 'Outdoor', meta2: 'Anfänger – Pro',
-  },
-  {
-    num: '06',
-    icon: (
-      <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
         <ellipse cx="32" cy="40" rx="20" ry="8" /><path d="M12 40v6c0 4 9 8 20 8s20-4 20-8v-6M32 8v22M22 14h20" />
       </svg>
     ),
@@ -84,7 +72,7 @@ const services = [
     meta1: '30 Min', meta2: '1:1',
   },
   {
-    num: '07',
+    num: '06',
     icon: (
       <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M32 12c-8 0-14 6-14 14 0 12 14 24 14 24s14-12 14-24c0-8-6-14-14-14z" /><circle cx="32" cy="26" r="5" />
@@ -96,7 +84,7 @@ const services = [
     meta1: '1:1', meta2: 'Beratung',
   },
   {
-    num: '08',
+    num: '07',
     icon: (
       <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="14" cy="32" r="6" /><circle cx="50" cy="32" r="6" /><path d="M20 32h24M28 22v20M36 22v20" />
