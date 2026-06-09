@@ -67,7 +67,7 @@ export default function Kursplan() {
             </div>
             <div className="db-day-slots">
               <Slot
-                time="17:15" title="TRX-Schlingentraining" tag="Ganzkörper · 45 Min"
+                time="17:15" title="TRX-Schlingentraining" tag="Ganzkörper · 30 Min"
                 h4="TRX-Schlingentraining"
                 desc="Suspension-Training mit Schlingen · dein Körpergewicht ist der Widerstand. Du forderst Kraft, Stabilität und Koordination in jeder Bewegung."
                 meta={[{ label: 'Level', value: 'Alle' }, { label: 'Format', value: 'Gruppe' }]}
@@ -79,7 +79,7 @@ export default function Kursplan() {
                 meta={[{ label: 'Level', value: 'Fortgeschritten' }, { label: 'Kcal', value: '~500' }]}
               />
               <Slot
-                time="19:00" title="Bodyfeeling" tag="Mobility + Kraft · 60 Min"
+                time="19:00" title="Bodyfeeling" tag="Mobility + Kraft · 45 Min"
                 h4="Bodyfeeling"
                 desc="Bewusstes Ganzkörpertraining mit Fokus auf Haltung, Beweglichkeit und Tiefenmuskulatur. Ideal nach langen Bürotagen."
                 meta={[{ label: 'Level', value: 'Alle' }, { label: 'Format', value: 'Gruppe' }]}
@@ -109,13 +109,13 @@ export default function Kursplan() {
                 meta={[{ label: 'Level', value: 'Fortgeschritten' }, { label: 'Kcal', value: '~500' }]}
               />
               <Slot
-                time="17:30" title="Rollaxx" tag="Faszien · 50 Min"
+                time="17:30" title="Rollaxx" tag="Faszien · 30 Min"
                 h4="Rollaxx"
                 desc="Geführtes Faszientraining mit Rolle und Ball. Du löst Verspannungen, verbesserst Beweglichkeit und Regeneration · das beste Tool für gestresste Körper."
                 meta={[{ label: 'Level', value: 'Alle' }, { label: 'Format', value: 'Gruppe' }]}
               />
               <Slot
-                time="18:10" title="Hiit the Beat" tag="Cardio · 45 Min"
+                time="18:10" title="Hiit the Beat" tag="Cardio · 60 Min"
                 h4="Hiit the Beat"
                 desc="HIIT-Workout synchron zum Beat. Jede Übung im Takt, jeder Wechsel auf den Drop · Musik trägt dich durch jedes Intervall."
                 meta={[{ label: 'Level', value: 'Alle' }, { label: 'Kcal', value: '~480' }]}
@@ -133,13 +133,13 @@ export default function Kursplan() {
             </div>
             <div className="db-day-slots">
               <Slot
-                time="17:30" title="Pump &amp; Run" tag="Cardio + Hanteln · 60 Min"
+                time="17:30" title="Pump &amp; Run" tag="Cardio + Hanteln · 30 Min"
                 h4="Pump &amp; Run"
                 desc="Wechselnde Blöcke aus Cardio-Sequenzen und Hantel-Sets. Doppelter Effekt: Ausdauer und Muskeldefinition in einer Stunde."
                 meta={[{ label: 'Level', value: 'Alle' }, { label: 'Kcal', value: '~520' }]}
               />
               <Slot
-                time="18:15" title="Bodyfeeling" tag="Mobility + Kraft · 60 Min"
+                time="18:15" title="Bodyfeeling" tag="Mobility + Kraft · 45 Min"
                 h4="Bodyfeeling"
                 desc="Bewusstes Ganzkörpertraining für Haltung und Tiefenmuskulatur. Du gehst aus dem Kurs aufgerichteter, als du reingekommen bist."
                 meta={[{ label: 'Level', value: 'Alle' }, { label: 'Format', value: 'Gruppe' }]}
@@ -163,7 +163,7 @@ export default function Kursplan() {
             </div>
             <div className="db-day-slots">
               <Slot
-                time="09:00" title="Bodyfeeling" tag="Mobility + Kraft · 60 Min"
+                time="09:00" title="Bodyfeeling" tag="Mobility + Kraft · 45 Min"
                 h4="Bodyfeeling"
                 desc="Sanftes Ganzkörpertraining am Morgen. Haltung, Beweglichkeit, Tiefenmuskulatur · perfekter Start in den Tag."
                 meta={[{ label: 'Level', value: 'Alle' }, { label: 'Format', value: 'Gruppe' }]}
@@ -187,7 +187,7 @@ export default function Kursplan() {
                 meta={[{ label: 'Level', value: 'Kids' }, { label: 'Alter', value: '6–12 J.' }]}
               />
               <Slot
-                time="17:30" title="Step Aerobic" tag="Cardio · 50 Min"
+                time="17:30" title="Step Aerobic" tag="Cardio · 60 Min"
                 h4="Step Aerobic"
                 desc="Aerobic-Choreografien auf dem Step. Cardio mit Rhythmus, gut für Koordination und Ausdauer · der Klassiker im Plan."
                 meta={[{ label: 'Level', value: 'Alle' }, { label: 'Kcal', value: '~420' }]}
@@ -211,7 +211,7 @@ export default function Kursplan() {
             </div>
             <div className="db-day-slots">
               <Slot
-                time="16:30" title="Pump &amp; Run" tag="Cardio + Hanteln · 60 Min"
+                time="16:30" title="Pump &amp; Run" tag="Cardio + Hanteln · 30 Min"
                 h4="Pump &amp; Run"
                 desc="Cardio-Intervalle gekreuzt mit Hantel-Sets. Du verlässt das Studio mit dem Wochenende auf den Beinen · und nicht andersrum."
                 meta={[{ label: 'Level', value: 'Alle' }, { label: 'Kcal', value: '~520' }]}
