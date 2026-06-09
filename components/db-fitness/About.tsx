@@ -4,10 +4,6 @@ export default function About() {
       <div className="db-container db-about-grid">
         {/* Portrait */}
         <div className="db-about-portrait">
-          <div className="db-about-portrait-tag">
-            <span className="dot" />
-            <address style={{ fontStyle: 'normal', display: 'inline' }}>Im Studio · Hochstraße 143, Sonsbeck</address>
-          </div>
           <div className="db-about-badge">
             <div className="since">since &apos;19</div>
             <div className="id">
