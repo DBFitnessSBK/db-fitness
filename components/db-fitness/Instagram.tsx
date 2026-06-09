@@ -10,7 +10,7 @@ const InstaIcon = () => (
 
 async function fetchBeholdFeed(): Promise<BeholdPost[]> {
   try {
-    const feedUrl = process.env.BEHOLD_FEED_URL || 'https://feeds.behold.so/zFgp2Jbbk23Ovf1ZUOhq'
+    const feedUrl = process.env.BEHOLD_FEED_URL || 'https://feeds.behold.so/6fFgPMYwFd9rXURNkXME'
 
     const response = await fetch(feedUrl, {
       next: { revalidate: 3600 },
