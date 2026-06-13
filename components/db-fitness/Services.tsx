@@ -39,42 +39,6 @@ const services = [
     num: '03',
     icon: (
       <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="32" cy="36" r="16" /><path d="M32 20v-4M28 16h8M22 30l-4-4M42 30l4-4" />
-      </svg>
-    ),
-    title: 'Functional Fitness',
-    tag: 'Athletik + Alltag · 50 Min',
-    desc: 'Mehrgelenkige Bewegungen, die deinen Alltag besser machen. Kettlebells, Bänder, Bodyweight · Komplexität statt Maschinen, das Programm, das mich selbst gepackt hat.',
-    meta1: '50 Min', meta2: 'Alle Level',
-  },
-  {
-    num: '04',
-    icon: (
-      <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M16 8v24M16 32l-6 24M16 32l6 24M32 8v24M32 32l-6 24M32 32l6 24M48 8v24M48 32l-6 24M48 32l6 24" />
-      </svg>
-    ),
-    title: 'Schlingentraining',
-    tag: 'TRX · Suspension · 45 Min',
-    desc: 'Körperspannung als Hauptdarsteller. Mit den TRX-Schlingen ist dein eigenes Gewicht das einzige Tool · Ganzkörper-Workout, jede Einheit.',
-    meta1: '45 Min', meta2: 'Alle Level',
-  },
-  {
-    num: '05',
-    icon: (
-      <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="40" cy="14" r="5" /><path d="M30 30l8-8 10 4-4 10-12 4M20 50l10-20M14 56l6-6 12 0" />
-      </svg>
-    ),
-    title: 'Laufkurse',
-    tag: 'Outdoor · Sonsbeck',
-    desc: <>Von 5K bis Marathon. Laufstil-Analyse, individueller Trainingsplan und gemeinsame Einheiten · meine eigene <span style={{ color: '#FF5B1E' }}>Leidenschaft</span>, jetzt deine.</>,
-    meta1: 'Outdoor', meta2: 'Anfänger – Pro',
-  },
-  {
-    num: '06',
-    icon: (
-      <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
         <ellipse cx="32" cy="40" rx="20" ry="8" /><path d="M12 40v6c0 4 9 8 20 8s20-4 20-8v-6M32 8v22M22 14h20" />
       </svg>
     ),
@@ -84,7 +48,7 @@ const services = [
     meta1: '30 Min', meta2: '1:1',
   },
   {
-    num: '07',
+    num: '04',
     icon: (
       <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M32 12c-8 0-14 6-14 14 0 12 14 24 14 24s14-12 14-24c0-8-6-14-14-14z" /><circle cx="32" cy="26" r="5" />
@@ -96,16 +60,16 @@ const services = [
     meta1: '1:1', meta2: 'Beratung',
   },
   {
-    num: '08',
+    num: '05',
     icon: (
       <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="14" cy="32" r="6" /><circle cx="50" cy="32" r="6" /><path d="M20 32h24M28 22v20M36 22v20" />
+        <circle cx="22" cy="18" r="6" /><circle cx="42" cy="18" r="6" /><path d="M10 44 Q22 34 22 44 L22 54 H12 Z M42 44 Q54 34 54 44 L54 54 H44 Z M28 40 Q32 34 36 40 L36 54 H28 Z" />
       </svg>
     ),
-    title: 'Pump & Run',
-    tag: 'Cardio + Hanteln · 60 Min',
-    desc: 'Lauf-Intervalle gekreuzt mit Hantel-Sätzen. Doppelter Effekt: Ausdauer und Muskeldefinition in einer Stunde · immer in der Gruppe.',
-    meta1: '60 Min', meta2: 'Gruppe',
+    title: 'Gruppenkurse',
+    tag: 'Gruppe · feste Termine',
+    desc: 'Gemeinsam stark: motivierende Workouts in der Gruppe mit klarer Anleitung und viel Energie. Vom Einsteiger bis zum Profi · jeder trainiert im eigenen Tempo, alle ziehen mit.',
+    meta1: 'Gruppe', meta2: 'Alle Level',
   },
 ]
 
@@ -117,7 +81,7 @@ export default function Services() {
           <div>
             <div className="db-eyebrow">Meine Leistungen</div>
             <h2 id="services-title">
-              Acht Wege, dich <span className="graff">besser</span> zu machen.
+              Fünf Wege, dich <span className="graff">besser</span> zu machen.
             </h2>
           </div>
           <p className="db-section-head-right">

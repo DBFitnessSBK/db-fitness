@@ -629,7 +629,7 @@ a { color: inherit; text-decoration: none; }
 .db-about-portrait {
   position: relative;
   aspect-ratio: 4/5;
-  background-image: url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/gym-beastmode-CDSuVQtKSeFMRrmKZOhoXSkUdZLABn.jpeg");
+  background-image: url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1000059595-9CerYtrm9By8ZnIIlCSngNXKOOjST2.jpeg");
   background-size: cover;
   background-position: center;
   overflow: hidden;
@@ -2124,7 +2124,61 @@ a { color: inherit; text-decoration: none; }
   .db-services,
   .db-quote,
   .db-kursplan,
+  .db-booking,
   .db-insta,
   .db-contact,
   .db-reviews { padding-top: 72px; padding-bottom: 64px; }
+}
+
+/* ============================================================
+   BOOKING — OptiOffice Kalender
+   ============================================================ */
+.db-booking {
+  padding: 0 0 120px;
+  position: relative;
+  background: var(--bg);
+  overflow: hidden;
+}
+.db-booking-head {
+  margin-bottom: 40px;
+  max-width: 640px;
+}
+.db-booking-head h2 {
+  font-family: var(--display);
+  font-size: clamp(40px, 6vw, 90px);
+  line-height: .9;
+  letter-spacing: -.005em;
+  text-transform: uppercase;
+  margin: 16px 0 18px;
+}
+.db-booking-head h2 .graff {
+  font-family: var(--graffiti);
+  color: var(--db-accent);
+  display: inline-block;
+  transform: rotate(-4deg);
+  font-size: .82em;
+}
+.db-booking-head p {
+  font-family: var(--body);
+  color: var(--ink-dim);
+  font-size: 17px;
+  line-height: 1.6;
+  margin: 0;
+}
+.db-booking-frame {
+  border: 1px solid var(--line-2);
+  border-radius: 16px;
+  background: var(--surface);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+.db-booking-frame iframe {
+  display: block;
+  width: 100%;
+  height: 1100px;
+  border: 0;
+  background: var(--bg);
+}
+@media (max-width: 720px) {
+  .db-booking-frame iframe { height: 1400px; }
 }
