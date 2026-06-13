@@ -31,11 +31,6 @@ export default function ImpressumPage() {
 
       <p>Berufsbezeichnung: Fitness Trainer</p>
 
-      <p>
-        Umsatzsteuer-Identifikationsnummer gem. § 27a UStG:<br />
-        DE000000000 {/* TODO: durch tatsächliche USt-IdNr. ersetzen */}
-      </p>
-
       <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV:</h2>
       <p>
         Daniel van der Bij<br />

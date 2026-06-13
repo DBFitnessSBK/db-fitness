@@ -11,10 +11,6 @@ export default function Stats() {
           <div className="db-stat-label">Trainer-Lizenzen &amp; Zertifikate</div>
         </div>
         <div className="db-stat">
-          <div className="db-stat-num"><em>8</em></div>
-          <div className="db-stat-label">Trainingsformen unter einem Dach</div>
-        </div>
-        <div className="db-stat">
           <div className="db-stat-num"><em>1:1</em></div>
           <div className="db-stat-label">Persönliche Betreuung in jedem Programm</div>
         </div>

@@ -76,7 +76,7 @@ export default function Kursplan() {
                 time="18:00" title="HIIT-Zirkeltraining" tag="Cardio + Kraft · 45 Min"
                 h4="HIIT-Zirkeltraining"
                 desc="High-Intensity-Stationen im Zirkel · kurze, harte Intervalle für maximale Fettverbrennung und Konditionsaufbau. Pausen sind kurz, Effekt ist groß."
-                meta={[{ label: 'Level', value: 'Fortgeschritten' }, { label: 'Kcal', value: '~500' }]}
+                meta={[{ label: 'Level', value: 'Einsteiger bis Fortgeschritten' }, { label: 'Kcal', value: '~500' }]}
               />
               <Slot
                 time="19:00" title="Bodyfeeling" tag="Mobility + Kraft · 45 Min"
@@ -88,7 +88,7 @@ export default function Kursplan() {
                 time="20:00" title="Latin Dance for Fitness" tag="Cardio + Spaß · 60 Min"
                 h4="Latin Dance for Fitness"
                 desc="Salsa, Merengue, Reggaeton · Cardio, das sich nicht wie Cardio anfühlt. Schritte werden langsam aufgebaut, keine Vorkenntnisse nötig."
-                meta={[{ label: 'Level', value: 'Einsteiger' }, { label: 'Kcal', value: '~450' }]}
+                meta={[{ label: 'Level', value: 'Einsteiger bis Fortgeschritten' }, { label: 'Kcal', value: '~450' }]}
               />
             </div>
           </div>
@@ -106,7 +106,7 @@ export default function Kursplan() {
                 time="09:00" title="HIIT-Zirkeltraining" tag="Cardio + Kraft · 45 Min"
                 h4="HIIT-Zirkeltraining"
                 desc="Stationen mit kurzen, intensiven Intervallen. Kraft, Cardio und Core in einer Session · der effizienteste Workout-Typ im Plan."
-                meta={[{ label: 'Level', value: 'Fortgeschritten' }, { label: 'Kcal', value: '~500' }]}
+                meta={[{ label: 'Level', value: 'Einsteiger bis Fortgeschritten' }, { label: 'Kcal', value: '~500' }]}
               />
               <Slot
                 time="17:30" title="Rollaxx" tag="Faszien · 30 Min"
@@ -148,7 +148,7 @@ export default function Kursplan() {
                 time="19:15" title="Latin Dance for Fitness" tag="Cardio + Spaß · 60 Min"
                 h4="Latin Dance for Fitness"
                 desc="Cardio mit Salsa- und Reggaeton-Choreos. Schritte werden Stück für Stück aufgebaut · Spaß garantiert, Schweiß auch."
-                meta={[{ label: 'Level', value: 'Einsteiger' }, { label: 'Kcal', value: '~450' }]}
+                meta={[{ label: 'Level', value: 'Einsteiger bis Fortgeschritten' }, { label: 'Kcal', value: '~450' }]}
               />
             </div>
           </div>
@@ -184,7 +184,7 @@ export default function Kursplan() {
                 time="16:15" title="Functional Kids" tag="Kids · 45 Min"
                 h4="Functional Kids"
                 desc="Bewegungstraining für Kinder · Koordination, Kraft und Spaß. Spielerische Stationen, die Haltung und Athletik fördern."
-                meta={[{ label: 'Level', value: 'Kids' }, { label: 'Alter', value: '6–12 J.' }]}
+                meta={[{ label: 'Level', value: 'Einsteiger bis Fortgeschritten' }, { label: 'Alter', value: '6–12 J.' }]}
               />
               <Slot
                 time="17:30" title="Step Aerobic" tag="Cardio · 60 Min"
@@ -196,7 +196,7 @@ export default function Kursplan() {
                 time="18:45" title="HIIT-Zirkeltraining" tag="Cardio + Kraft · 45 Min"
                 h4="HIIT-Zirkeltraining"
                 desc="Hochintensive Intervalle im Stationsbetrieb. Maximaler Output in minimaler Zeit · der Standard für effizientes Training."
-                meta={[{ label: 'Level', value: 'Fortgeschritten' }, { label: 'Kcal', value: '~500' }]}
+                meta={[{ label: 'Level', value: 'Einsteiger bis Fortgeschritten' }, { label: 'Kcal', value: '~500' }]}
               />
             </div>
           </div>
@@ -230,7 +230,12 @@ export default function Kursplan() {
             <strong>Anmeldung erforderlich.</strong> Plätze sind limitiert · sichere dir deinen Spot per
             WhatsApp oder Telefon. Probetraining ist immer kostenlos.
           </p>
-          <a className="db-btn db-btn-primary" href="#contact">
+          <a
+            className="db-btn db-btn-primary"
+            href="https://optioffice.eu/optioffice/login/homepagemodul.php?s=945&c=303161843&color=&background="
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Platz reservieren
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
               <path d="M5 12h14M13 6l6 6-6 6" />

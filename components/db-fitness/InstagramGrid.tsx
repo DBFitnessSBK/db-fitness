@@ -2,11 +2,6 @@
 
 import { useState } from 'react'
 
-const HeartIcon = () => (
-  <svg viewBox="0 0 24 24" fill="currentColor">
-    <path d="M12 21l-1.5-1.4C5.4 15 2 11.9 2 8.1 2 5.4 4.4 3 7.5 3c1.7 0 3.4.8 4.5 2.1A6 6 0 0 1 16.5 3C19.6 3 22 5.4 22 8.1c0 3.8-3.4 6.9-8.5 11.5L12 21z" />
-  </svg>
-)
 const PhotoIcon = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
     <rect x="3" y="3" width="18" height="18" />
@@ -19,6 +14,13 @@ export interface BeholdPost {
   link: string
   image: string
   caption?: string
+}
+
+const MAX_CAPTION_LENGTH = 140
+
+function truncateCaption(caption: string): string {
+  if (caption.length <= MAX_CAPTION_LENGTH) return caption
+  return caption.slice(0, MAX_CAPTION_LENGTH).trimEnd() + '…'
 }
 
 export default function InstagramGrid({ posts }: { posts: BeholdPost[] }) {
@@ -71,15 +73,11 @@ export default function InstagramGrid({ posts }: { posts: BeholdPost[] }) {
           href={post.link}
           target="_blank"
           rel="noopener noreferrer"
-          title={post.caption || 'Instagram Post'}
         >
           <span className="db-insta-corner"><PhotoIcon /></span>
           <img src={post.image} alt={post.caption || 'Instagram Post'} />
           <div className="db-insta-overlay">
-            {post.caption && <div className="caption">{post.caption}</div>}
-            <div className="meta">
-              <span><HeartIcon />—</span>
-            </div>
+            {post.caption && <div className="caption">{truncateCaption(post.caption)}</div>}
           </div>
         </a>
       ))}

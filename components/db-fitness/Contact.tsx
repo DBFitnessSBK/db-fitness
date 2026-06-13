@@ -13,9 +13,24 @@ export default function Contact() {
           <h2 id="contact-title">
             Lass uns <span className="graff">trainieren.</span>
           </h2>
-          <p className="db-contact-lede">
-            Schreib mir, ruf an, oder buch direkt eine kostenlose Probe-Einheit. Du findest mich in <a href="https://maps.app.goo.gl/kwbV6ptLNcjRQCVC6" target="_blank" rel="noopener noreferrer">Sonsbeck, Hochstraße 143</a> · Parkplätze direkt vor der Tür.
-          </p>
+          <div className="db-contact-intro">
+            <p className="db-contact-lede">
+              Schreib mir, ruf an, oder buch direkt eine kostenlose Probe-Einheit. Du findest mich in <a href="https://maps.app.goo.gl/kwbV6ptLNcjRQCVC6" target="_blank" rel="noopener noreferrer">Sonsbeck, Hochstraße 143</a> · Parkplätze direkt vor der Tür.
+            </p>
+            <div className="db-contact-cta">
+              <a
+                className="db-btn db-btn-primary"
+                href="https://optioffice.eu/optioffice/login/homepagemodul.php?s=945&c=303161843&color=&background="
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Kurs buchen
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </a>
+            </div>
+          </div>
         </div>
 
         <div className="db-contact-grid">

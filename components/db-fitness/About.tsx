@@ -1,4 +1,16 @@
+function calculateAge(birthDate: Date): number {
+  const now = new Date()
+  let age = now.getFullYear() - birthDate.getFullYear()
+  const monthDiff = now.getMonth() - birthDate.getMonth()
+  if (monthDiff < 0 || (monthDiff === 0 && now.getDate() < birthDate.getDate())) {
+    age--
+  }
+  return age
+}
+
 export default function About() {
+  const age = calculateAge(new Date(1986, 5, 28)) // 28.6.1986
+
   return (
     <section className="db-about" id="about" aria-labelledby="about-title">
       <div className="db-container db-about-grid">
@@ -21,7 +33,8 @@ export default function About() {
             <br />– keine pflicht.
           </h2>
           <p>
-            Mein Name ist Daniel, ich bin <strong>39 Jahre alt</strong> und lizensierter Personal Trainer mit
+            Mein Name ist Daniel, ich bin <strong>{age} Jahre alt</strong>{" "}
+            und lizensierter Personal Trainer mit
             Medizinischer Fitness, den Trainer-Lizenzen A &amp; B und einem Power-Plate-Zertifikat. 2019 habe
             ich mit <strong>DB Fitness</strong> mein eigenes Studio in Sonsbeck eröffnet.
           </p>
