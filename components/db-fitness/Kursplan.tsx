@@ -1,5 +1,8 @@
 const InfoDot = () => <span className="info-dot" />
 
+const OPTIOFFICE_URL =
+  'https://optioffice.eu/optioffice/login/homepagemodul.php?s=945&c=303161843&color=&background='
+
 function Slot({
   time,
   title,
@@ -7,6 +10,7 @@ function Slot({
   h4,
   desc,
   meta,
+  reserveUrl = OPTIOFFICE_URL,
 }: {
   time: string
   title: string
@@ -14,6 +18,7 @@ function Slot({
   h4: string
   desc: string
   meta: { label: string; value: string }[]
+  reserveUrl?: string
 }) {
   return (
     <div className="db-slot" tabIndex={0}>
@@ -32,6 +37,17 @@ function Slot({
             </span>
           ))}
         </div>
+        <a
+          className="db-slot-card-cta"
+          href={reserveUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Platz reservieren
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+            <path d="M5 12h14M13 6l6 6-6 6" />
+          </svg>
+        </a>
       </div>
     </div>
   )
@@ -173,12 +189,14 @@ export default function Kursplan() {
                 h4="FitdankBaby Mini"
                 desc="Rückbildung &amp; Fitness mit Baby (ca. 3–7 Monate). Beckenboden, Bauch und Haltung · sicher und langsam aufgebaut, Baby liegt dabei."
                 meta={[{ label: 'Level', value: 'Postnatal' }, { label: 'Alter', value: '3–7 Mon.' }]}
+                reserveUrl="https://www.fitdankbaby.de/courses/?id_gebiet=3792&plz=47665"
               />
               <Slot
                 time="11:15" title="FitdankBaby Maxi" tag="Postnatal · 60 Min"
                 h4="FitdankBaby Maxi"
                 desc="Intensiveres Workout für Mamas, deren Babys bereits robben oder krabbeln (ca. 7+ Monate). Du trainierst, Baby spielt mit."
                 meta={[{ label: 'Level', value: 'Postnatal' }, { label: 'Alter', value: '7+ Mon.' }]}
+                reserveUrl="https://www.fitdankbaby.de/courses/?id_gebiet=3792&plz=47665"
               />
               <Slot
                 time="16:15" title="Functional Kids" tag="Kids · 45 Min"
