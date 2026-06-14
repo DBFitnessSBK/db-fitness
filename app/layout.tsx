@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import { Anton, Permanent_Marker, Inter } from 'next/font/google'
+import { REVIEWS, GOOGLE_RATING, GOOGLE_REVIEW_COUNT } from '@/lib/reviews'
 import './globals.css'
 
 const anton = Anton({
@@ -26,9 +27,10 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.db-fitness.de'
 const siteName = 'DB Fitness'
 const siteTitle = 'DB Fitness · Personal Training in Sonsbeck'
 const siteDescription =
-  'Personal Training, Functional Fitness, Power Plate, Krafttraining und Laufkurse in Sonsbeck am Niederrhein. Lizensierter Personal Trainer Daniel van der Bij · seit 2019. Jetzt kostenloses Probetraining sichern.'
-const ogImagePath = '/logo.png'
-const ogImageAbsolute = `${siteUrl}${ogImagePath}`
+  'Personal Training, Functional Fitness & Krafttraining in Sonsbeck am Niederrhein. Lizensierter Personal Trainer Daniel van der Bij – Probetraining sichern.'
+// Logo used for structured data (image/logo). The og:image + favicons are
+// served via the app/opengraph-image, app/icon and app/apple-icon file conventions.
+const logoAbsolute = `${siteUrl}/logo-optimized.png`
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -73,20 +75,11 @@ export const metadata: Metadata = {
     siteName,
     title: siteTitle,
     description: siteDescription,
-    images: [
-      {
-        url: ogImagePath,
-        width: 1200,
-        height: 630,
-        alt: 'DB Fitness · Personal Training in Sonsbeck',
-      },
-    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: siteTitle,
     description: siteDescription,
-    images: [ogImagePath],
   },
   robots: {
     index: true,
@@ -98,10 +91,6 @@ export const metadata: Metadata = {
       'max-image-preview': 'large',
       'max-video-preview': -1,
     },
-  },
-  icons: {
-    icon: ogImagePath,
-    apple: ogImagePath,
   },
 }
 
@@ -120,8 +109,8 @@ const localBusinessJsonLd = {
   name: 'DB Fitness · Personal Training by Daniel',
   alternateName: 'DB Fitness',
   url: siteUrl,
-  image: ogImageAbsolute,
-  logo: ogImageAbsolute,
+  image: logoAbsolute,
+  logo: logoAbsolute,
   description: siteDescription,
   telephone: '+49 178 8761855',
   email: 'DBFitness@web.de',
@@ -168,10 +157,21 @@ const localBusinessJsonLd = {
   ],
   aggregateRating: {
     '@type': 'AggregateRating',
-    ratingValue: '4.9',
+    ratingValue: String(GOOGLE_RATING),
     bestRating: '5',
-    reviewCount: '3',
+    reviewCount: String(GOOGLE_REVIEW_COUNT),
   },
+  review: REVIEWS.map((r) => ({
+    '@type': 'Review',
+    author: { '@type': 'Person', name: r.name },
+    datePublished: r.isoDate,
+    reviewRating: {
+      '@type': 'Rating',
+      ratingValue: String(r.rating),
+      bestRating: '5',
+    },
+    reviewBody: r.text,
+  })),
   makesOffer: [
     'Personal Training',
     'Krafttraining',

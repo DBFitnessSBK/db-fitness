@@ -1,37 +1,9 @@
 'use client'
 
 import { useState } from 'react'
+import { REVIEWS, GOOGLE_RATING, type Review } from '@/lib/reviews'
 
-const REVIEWS = [
-  {
-    name: 'Insa',
-    rating: 5,
-    date: 'Mai 2026',
-    link: 'https://maps.app.goo.gl/nQmW3ioZCAAAuBn99',
-    image: '/reviews/insa.jpg',
-    text: 'Ein tolles Trainerteam, es gibt viele verschiedene Kurse zu verschiedenen Zeiten, somit gibt es keine Ausrede keinen Sport zu machen 😉. Auch als Anfänger ist man bei DB Fitness sehr gut aufgehoben. Ich kann es nur empfehlen, es macht süchtig !! …',
-  },
-  {
-    name: 'Melina',
-    rating: 5,
-    date: 'Mai 2026',
-    link: 'https://maps.app.goo.gl/wsXkxGXxeJWwXwFUA',
-    image: null,
-    text: 'Seit inzwischen drei Jahren besuche ich die Kurse und bin nach wie vor sehr zufrieden. Die Übungen sind zwar oft anstrengend und fordernd, aber genau das macht das Training effektiv – und gleichzeitig macht es auch wirklich Spaß. Besonders positiv finde ich, dass immer auf die Teilnehmer eingegangen wird. Übungen werden bei Bedarf individuell angepasst, sodass wirklich jeder mitmachen kann, unabhängig vom Fitnesslevel. Die Atmosphäre ist außerdem sehr angenehm, alle sind freundlich und motivierend. Ein großes Lob an Daniel und Steffi – man fühlt sich bei euch einfach gut aufgehoben. Absolute Empfehlung!',
-  },
-  {
-    name: 'Silke',
-    rating: 5,
-    date: 'August 2024',
-    link: 'https://maps.app.goo.gl/B8LT784UVpg2e76w9',
-    image: '/reviews/silke.jpg',
-    text: 'Super Training, super Kommunikation – leistungsgerecht und herausfordernd zugleich. Tolles Trainerteam, seit 3,5 Jahren dabei.',
-  },
-]
-
-const CLAMP_LINES = 4
-
-function ReviewCard({ review }: { review: typeof REVIEWS[number] }) {
+function ReviewCard({ review }: { review: Review }) {
   const [expanded, setExpanded] = useState(false)
 
   return (
@@ -39,7 +11,7 @@ function ReviewCard({ review }: { review: typeof REVIEWS[number] }) {
       <header className="db-review-card-header">
         <div className="db-review-avatar" aria-hidden="true">
           {review.image ? (
-            <img src={review.image} alt="" loading="lazy" />
+            <img src={review.image} alt={`${review.name} – Kundenbewertung für DB Fitness`} loading="lazy" />
           ) : (
             review.name.charAt(0)
           )}
@@ -114,7 +86,7 @@ export default function Reviews() {
             </h2>
           </div>
           <div className="db-reviews-summary">
-            <div className="db-reviews-score">4.9</div>
+            <div className="db-reviews-score">{GOOGLE_RATING.toLocaleString('de-DE')}</div>
             <div className="db-reviews-summary-right">
               <Stars count={5} />
               <div className="db-reviews-source">
