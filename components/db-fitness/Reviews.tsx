@@ -8,6 +8,7 @@ const REVIEWS = [
     rating: 5,
     date: 'Mai 2026',
     link: 'https://maps.app.goo.gl/nQmW3ioZCAAAuBn99',
+    image: '/reviews/insa.jpg',
     text: 'Ein tolles Trainerteam, es gibt viele verschiedene Kurse zu verschiedenen Zeiten, somit gibt es keine Ausrede keinen Sport zu machen 😉. Auch als Anfänger ist man bei DB Fitness sehr gut aufgehoben. Ich kann es nur empfehlen, es macht süchtig !! …',
   },
   {
@@ -15,6 +16,7 @@ const REVIEWS = [
     rating: 5,
     date: 'Mai 2026',
     link: 'https://maps.app.goo.gl/wsXkxGXxeJWwXwFUA',
+    image: null,
     text: 'Seit inzwischen drei Jahren besuche ich die Kurse und bin nach wie vor sehr zufrieden. Die Übungen sind zwar oft anstrengend und fordernd, aber genau das macht das Training effektiv – und gleichzeitig macht es auch wirklich Spaß. Besonders positiv finde ich, dass immer auf die Teilnehmer eingegangen wird. Übungen werden bei Bedarf individuell angepasst, sodass wirklich jeder mitmachen kann, unabhängig vom Fitnesslevel. Die Atmosphäre ist außerdem sehr angenehm, alle sind freundlich und motivierend. Ein großes Lob an Daniel und Steffi – man fühlt sich bei euch einfach gut aufgehoben. Absolute Empfehlung!',
   },
   {
@@ -22,6 +24,7 @@ const REVIEWS = [
     rating: 5,
     date: 'August 2024',
     link: 'https://maps.app.goo.gl/B8LT784UVpg2e76w9',
+    image: '/reviews/silke.jpg',
     text: 'Super Training, super Kommunikation – leistungsgerecht und herausfordernd zugleich. Tolles Trainerteam, seit 3,5 Jahren dabei.',
   },
 ]
@@ -35,7 +38,11 @@ function ReviewCard({ review }: { review: typeof REVIEWS[number] }) {
     <article className="db-review-card">
       <header className="db-review-card-header">
         <div className="db-review-avatar" aria-hidden="true">
-          {review.name.charAt(0)}
+          {review.image ? (
+            <img src={review.image} alt="" loading="lazy" />
+          ) : (
+            review.name.charAt(0)
+          )}
         </div>
         <div className="db-review-meta">
           <div className="db-review-name">{review.name}</div>

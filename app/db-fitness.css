@@ -1936,6 +1936,12 @@ a { color: inherit; text-decoration: none; }
   font-size: 18px;
   color: var(--db-accent);
   flex-shrink: 0;
+  overflow: hidden;
+}
+.db-review-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .db-review-meta {
   flex: 1;
