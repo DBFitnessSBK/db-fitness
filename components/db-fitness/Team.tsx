@@ -20,6 +20,12 @@ export default function Team() {
       description: 'Hallo, mein Name ist Anke. Seit über 10 Jahren tanze ich mit großer Leidenschaft. Latin Dance ist für mich die perfekte Möglichkeit, dem Alltag zu entfliehen, abzuschalten und neue Energie zu tanken. Diese Freude an Musik und Bewegung möchte ich gerne mit euch teilen. In meinen Kursen stehen Spaß, Fitness und gute Laune im Mittelpunkt. Alle sind herzlich willkommen. Ich freue mich darauf, mit euch zu tanzen!',
       image: '/team/trainer-3.jpeg',
     },
+    {
+      name: 'Sarah',
+      role: 'Latin-Dance-Trainerin',
+      description: 'Hi, ich bin Sarah! Meine größte Leidenschaft ist das Tanzen. Seit 2014 leite ich mit viel Freude Latin-Dance-Kurse. Gemeinsam tanzen wir zu mitreißenden Rhythmen, bringen den Kreislauf in Schwung und haben vor allem jede Menge Spaß. Besonders schön ist, dass mich viele Teilnehmerinnen schon seit Jahren begleiten. Ich freue mich darauf, mit euch zu tanzen und gemeinsam aktiv zu sein!',
+      image: '/team/trainer-4.jpeg',
+    },
   ]
 
   return (
