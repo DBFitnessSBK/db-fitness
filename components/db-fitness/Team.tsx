@@ -15,10 +15,10 @@ export default function Team() {
       image: '/team/trainer-2.jpeg',
     },
     {
-      name: 'Julia Hoffmann',
-      role: 'Fitnesstrainerin',
-      description: 'Leidenschaftlich im Gruppentraining und Einzelbetreuung. Julia motiviert ihre Trainierenden mit Energie und Geduld.',
-      image: '/team/julia-hoffmann.jpg',
+      name: 'Anke',
+      role: 'Latin-Dance-Trainerin',
+      description: 'Hallo, mein Name ist Anke. Seit über 10 Jahren tanze ich mit großer Leidenschaft. Latin Dance ist für mich die perfekte Möglichkeit, dem Alltag zu entfliehen, abzuschalten und neue Energie zu tanken. Diese Freude an Musik und Bewegung möchte ich gerne mit euch teilen. In meinen Kursen stehen Spaß, Fitness und gute Laune im Mittelpunkt. Alle sind herzlich willkommen. Ich freue mich darauf, mit euch zu tanzen!',
+      image: '/team/trainer-3.jpeg',
     },
   ]
 
