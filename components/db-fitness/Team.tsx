@@ -26,6 +26,12 @@ export default function Team() {
       description: 'Hi, ich bin Sarah! Meine größte Leidenschaft ist das Tanzen. Seit 2014 leite ich mit viel Freude Latin-Dance-Kurse. Gemeinsam tanzen wir zu mitreißenden Rhythmen, bringen den Kreislauf in Schwung und haben vor allem jede Menge Spaß. Besonders schön ist, dass mich viele Teilnehmerinnen schon seit Jahren begleiten. Ich freue mich darauf, mit euch zu tanzen und gemeinsam aktiv zu sein!',
       image: '/team/trainer-4.jpeg',
     },
+    {
+      name: 'Britta',
+      role: 'fitdankbaby-Trainerin',
+      description: 'Hallo, ich bin Britta! Seit 4 Jahren leite ich fitdankbaby-Kurse. Kennengelernt habe ich das Konzept als Teilnehmerin mit meinem großen Sohn – und war sofort begeistert. Das macht fitdankbaby besonders: Babys sind Teil des Kurses, sicheres Training nach der Schwangerschaft und Bewegung ganz ohne Babysitter. Ich freue mich auf euch!',
+      image: '/team/trainer-5.jpeg',
+    },
   ]
 
   return (
