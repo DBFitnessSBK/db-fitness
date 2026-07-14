@@ -6,7 +6,7 @@ export default function Team() {
       name: 'Sarah Müller',
       role: 'Fitnesstrainerin',
       description: 'Spezialisiert auf Kraft- und Ausdauertraining. Mit 7 Jahren Erfahrung hilft Sarah ihren Kunden, ihre Ziele nachhaltig zu erreichen.',
-      image: '/team/sarah-mueller.jpg',
+      image: '/team/trainer-1.jpeg',
     },
     {
       name: 'Marcus Weber',
