@@ -9,10 +9,10 @@ export default function Team() {
       image: '/team/trainer-1.jpeg',
     },
     {
-      name: 'Marcus Weber',
-      role: 'Personal Trainer',
-      description: 'Experte für funktionales Training und Rehabilitation. Marcus kombiniert sportwissenschaftliche Methodik mit praktischer Erfahrung.',
-      image: '/team/marcus-weber.jpg',
+      name: 'Steffi',
+      role: 'Kurstrainerin',
+      description: 'Ich bin Steffi und gebe die Kurse Bodyfeeling, Step Aerobic und den Kinderkurs. Seit 2024 bin ich Trainerin bei DB Fitness und war vorher begeisterte Teilnehmerin. Für die Kursteilnehmer immer wieder neue Übungen und kreative Herausforderungen zu gestalten, bereitet mir große Freude. Im Vordergrund steht für mich, dass sich jeder wohlfühlt – egal auf welchem Sportlevel man gerade ist. Hauptsache, wir haben gemeinsam Spaß beim Sport. Das ist die größte Motivation.',
+      image: '/team/trainer-2.jpeg',
     },
     {
       name: 'Julia Hoffmann',
