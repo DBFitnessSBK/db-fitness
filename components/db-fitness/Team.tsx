@@ -3,22 +3,34 @@ import Image from 'next/image'
 export default function Team() {
   const trainers = [
     {
-      name: 'Sarah Müller',
-      role: 'Fitnesstrainerin',
-      description: 'Spezialisiert auf Kraft- und Ausdauertraining. Mit 7 Jahren Erfahrung hilft Sarah ihren Kunden, ihre Ziele nachhaltig zu erreichen.',
-      image: '/team/sarah-mueller.jpg',
+      name: 'Daniel van der Bij',
+      role: 'Personal Trainer · Coach',
+      description: 'Lizensierter Personal Trainer mit Medizinischer Fitness, den Trainer-Lizenzen A & B und Power-Plate-Zertifikat. 2019 gründete er DB Fitness in Sonsbeck und bringt dich gemeinsam an deine Grenzen – und ein Stück darüber hinaus.',
+      image: '/team/trainer-1.jpeg',
     },
     {
-      name: 'Marcus Weber',
-      role: 'Personal Trainer',
-      description: 'Experte für funktionales Training und Rehabilitation. Marcus kombiniert sportwissenschaftliche Methodik mit praktischer Erfahrung.',
-      image: '/team/marcus-weber.jpg',
+      name: 'Steffi',
+      role: 'Kurstrainerin',
+      description: 'Ich bin Steffi und gebe die Kurse Bodyfeeling, Step Aerobic und den Kinderkurs. Seit 2024 bin ich Trainerin bei DB Fitness und war vorher begeisterte Teilnehmerin. Für die Kursteilnehmer immer wieder neue Übungen und kreative Herausforderungen zu gestalten, bereitet mir große Freude. Im Vordergrund steht für mich, dass sich jeder wohlfühlt – egal auf welchem Sportlevel man gerade ist. Hauptsache, wir haben gemeinsam Spaß beim Sport. Das ist die größte Motivation.',
+      image: '/team/trainer-2.jpeg',
     },
     {
-      name: 'Julia Hoffmann',
-      role: 'Fitnesstrainerin',
-      description: 'Leidenschaftlich im Gruppentraining und Einzelbetreuung. Julia motiviert ihre Trainierenden mit Energie und Geduld.',
-      image: '/team/julia-hoffmann.jpg',
+      name: 'Anke',
+      role: 'Latin-Dance-Trainerin',
+      description: 'Hallo, mein Name ist Anke. Seit über 10 Jahren tanze ich mit großer Leidenschaft. Latin Dance ist für mich die perfekte Möglichkeit, dem Alltag zu entfliehen, abzuschalten und neue Energie zu tanken. Diese Freude an Musik und Bewegung möchte ich gerne mit euch teilen. In meinen Kursen stehen Spaß, Fitness und gute Laune im Mittelpunkt. Alle sind herzlich willkommen. Ich freue mich darauf, mit euch zu tanzen!',
+      image: '/team/trainer-3.jpeg',
+    },
+    {
+      name: 'Sarah',
+      role: 'Latin-Dance-Trainerin',
+      description: 'Hi, ich bin Sarah! Meine größte Leidenschaft ist das Tanzen. Seit 2014 leite ich mit viel Freude Latin-Dance-Kurse. Gemeinsam tanzen wir zu mitreißenden Rhythmen, bringen den Kreislauf in Schwung und haben vor allem jede Menge Spaß. Besonders schön ist, dass mich viele Teilnehmerinnen schon seit Jahren begleiten. Ich freue mich darauf, mit euch zu tanzen und gemeinsam aktiv zu sein!',
+      image: '/team/trainer-4.jpeg',
+    },
+    {
+      name: 'Britta',
+      role: 'fitdankbaby-Trainerin',
+      description: 'Hallo, ich bin Britta! Seit 4 Jahren leite ich fitdankbaby-Kurse. Kennengelernt habe ich das Konzept als Teilnehmerin mit meinem großen Sohn – und war sofort begeistert. Das macht fitdankbaby besonders: Babys sind Teil des Kurses, sicheres Training nach der Schwangerschaft und Bewegung ganz ohne Babysitter. Ich freue mich auf euch!',
+      image: '/team/trainer-5.jpeg',
     },
   ]
 
