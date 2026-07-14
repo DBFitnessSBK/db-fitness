@@ -3,9 +3,9 @@ import Image from 'next/image'
 export default function Team() {
   const trainers = [
     {
-      name: 'Sarah Müller',
-      role: 'Fitnesstrainerin',
-      description: 'Spezialisiert auf Kraft- und Ausdauertraining. Mit 7 Jahren Erfahrung hilft Sarah ihren Kunden, ihre Ziele nachhaltig zu erreichen.',
+      name: 'Daniel van der Bij',
+      role: 'Personal Trainer · Coach',
+      description: 'Lizensierter Personal Trainer mit Medizinischer Fitness, den Trainer-Lizenzen A & B und Power-Plate-Zertifikat. 2019 gründete er DB Fitness in Sonsbeck und bringt dich gemeinsam an deine Grenzen – und ein Stück darüber hinaus.',
       image: '/team/trainer-1.jpeg',
     },
     {
