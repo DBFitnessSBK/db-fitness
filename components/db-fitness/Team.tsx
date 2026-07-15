@@ -5,7 +5,7 @@ export default function Team() {
     {
       name: 'Daniel van der Bij',
       role: 'Personal Trainer · Coach',
-      description: 'Lizensierter Personal Trainer mit Medizinischer Fitness, den Trainer-Lizenzen A & B und Power-Plate-Zertifikat. 2019 gründete er DB Fitness in Sonsbeck und bringt dich gemeinsam an deine Grenzen – und ein Stück darüber hinaus.',
+      description: 'Daniel ist der Kopf der ganzen Bande. Seit 2019 mit seinem Studio selbständig im Bereich Personal Training und Kursen. Treibt sich selber im Training an seine Limits und gibt seine ganze Leidenschaft in jedes Training für euch. Er liebt Burpees und hat immer ein Lächeln im Gesicht. Und denkt dran: Ihr seid alle freiwillig da 😁',
       image: '/team/trainer-1.jpeg',
     },
     {
